@@ -1,15 +1,24 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import FooterComponent from './components/FooterComponent.vue';
-import HeaderComponent from './components/HeaderComponent.vue';
-</script>
-
 <template>
-  <HeaderComponent/>
-  <h1>ciao</h1>
-  <FooterComponent/>
+  <HeaderComponent />
+
+  <main>
+    <router-view></router-view>
+  </main>
+
+  <FooterComponent />
 </template>
 
-<style scoped>
+<script>
+import { RouterLink, RouterView } from 'vue-router';
+import FooterComponent from './components/FooterComponent.vue';
+import HeaderComponent from './components/HeaderComponent.vue';
+export default {
+  name: 'App',
+  components: {
+    HeaderComponent,
+    FooterComponent
+  }
+}
+</script>
 
-</style>
+<style lang="scss" scoped></style>

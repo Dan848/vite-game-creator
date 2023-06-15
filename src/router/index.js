@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../pages/HomeView.vue'
-import CharacterList from '../pages/CharacterList.vue'
+import CharactersPage from '../pages/CharactersPage.vue'
 import SingleCharacter from '../pages/SingleCharacter.vue'
 import AboutUs from '../pages/AboutUs.vue'
 import ContactsView from '../pages/ContactsView.vue'
@@ -16,7 +16,7 @@ const router = createRouter({
     {
       path: '/characters',
       name: 'characters',
-      component: CharacterList
+      component: CharactersPage
     },
     {
       path: '/characters/:slug',
