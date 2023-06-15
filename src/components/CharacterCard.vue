@@ -2,9 +2,13 @@
     <div class="col-12 col-md-4 g-4 character-col text-white">
         <div class="p-5">
             <!-- {{ --Character Image-- }} -->
-            <div class="image-character-card py-4">
-                <img src="/img/knight.png" alt="{{ character.name }}" class="w-100 h-100">
+            <div class="character-card-image-box">
+                <router-link :to="{ name: 'single-character', params: { slug: character.slug } }"
+                    class="image-character-card py-4">
+                    <img src="/img/knight.png" alt="{{ character.name }}" class="w-100 h-100">
+                </router-link>
             </div>
+
 
             <!-- {{ --Character Name-- }} -->
             <div class="text-center card-name-border card-name-border-gradient">
@@ -84,9 +88,17 @@ export default {
         max-width: 200px;
     }
 
-    .image-character-card {
-        height: 2%;
+    .character-card-image-box {
+        display: flex;
+        justify-content: center;
+
+        .image-character-card {
+            height: 40%;
+            width: 75%;
+        }
     }
+
+
 
     .stats-img {
         width: 20px;
