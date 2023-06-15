@@ -1,15 +1,18 @@
 <template>
-    <div>
-
-    </div>
+  <div v-if="CharacterData == 0">
+    <LoaderComponent />
+  </div>
+  <div v-else></div>
 </template>
 
 <script>
-    export default {
-        name: 'SingleCharacter'
-    }
+import LoaderComponent from "../components/LoaderComponent.vue";
+export default {
+  name: "SingleCharacter",
+  components: {
+    LoaderComponent,
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
