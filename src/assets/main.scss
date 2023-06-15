@@ -15,24 +15,9 @@ body{
 }
 header {
     background-color: $primary;
-
-    .navbar-nav .nav-item .nav-link {
-        color: $dark;
+    a{
+        color: white;
     }
-
-    .navbar-nav .nav-item.active .nav-link,
-    .navbar-nav .nav-item:hover .nav-link {
-        color: $secondary;
-    }
-
-    .navbar-nav>li>.dropdown-menu a:link,
-    .navbar-nav>li>.dropdown-menu a:hover {
-        background-color: #5d3385;
-        color: $secondary;
-        padding: -20px;
-    }
-
-
 }
 //GENERAL
 .debug {
