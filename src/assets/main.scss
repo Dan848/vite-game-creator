@@ -10,15 +10,18 @@ $fa-font-path: "./webfonts" !default;
 @import 'bootstrap/scss/bootstrap';
 
 // HEADER Style config
-body{
+body {
     background-color: $body-color;
 }
+
 header {
     background-color: $primary;
-    a{
+
+    a {
         color: white;
     }
 }
+
 //GENERAL
 .debug {
     border: 2px solid white;
@@ -42,38 +45,6 @@ header {
         }
     }
 }
-.character-col {
-    background-image: url('/img/card-bg.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    // Gradient border for card name
-    .card-name-border{
-        border: 10px solid;
-        border-image-slice: 1;
-        border-width: 4px;
-    }
-    .card-name-border-gradient{
-        border-image-source: linear-gradient(90deg, rgba(57, 35, 77, 1) 0%, rgba(255, 255, 255, 1) 40%, rgba(255, 255, 255, 1) 60%, rgba(57, 35, 77, 1) 100%);
-    }
-    .image-character-show {
-        max-width: 200px;
-    }
-
-    .image-character-card {
-        height: 2%;
-    }
-    .stats-img {
-        width: 20px;
-        filter: invert(1);
-        margin-right: .5rem;
-    }
-
-    .left-stats {
-        border-right: 2px solid;
-    }
-}
 
 
 // CHARACTER LIST Page Style Config
@@ -84,11 +55,12 @@ header {
     height: 30px;
 }
 
-.form-floating{
-    > label{
+.form-floating {
+    >label {
         top: -5px;
-        &::after{
-            background-color: transparent!important;
+
+        &::after {
+            background-color: transparent !important;
         }
     }
 
@@ -99,7 +71,8 @@ header {
         border-bottom: 0px solid $primary;
         border-radius: 0;
         box-shadow: 0 2px 0 0 $primary;
-        &:focus{
+
+        &:focus {
             border: 0px solid $primary;
             box-shadow: 0 0 0 2px $primary;
             // border-bottom: 0px solid $primary;
@@ -127,49 +100,62 @@ header {
     background-color: var(--bs-breadcrumb-bg);
     border-radius: var(--bs-breadcrumb-border-radius);
 }
-.breadcrumb-item + .breadcrumb-item {
+
+.breadcrumb-item+.breadcrumb-item {
     padding-left: var(--bs-breadcrumb-item-padding-x);
-  }
-.breadcrumb-item + .breadcrumb-item::before {
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
     float: left;
     padding-right: var(--bs-breadcrumb-item-padding-x);
     color: var(--bs-breadcrumb-divider-color);
-    content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
-  }
+    content: var(--bs-breadcrumb-divider, "/")
+        /* rtl: var(--bs-breadcrumb-divider, "/") */
+    ;
+}
+
 .breadcrumb-item.active {
     color: var(--bs-breadcrumb-item-active-color);
 }
-.fixed-top, .sb-nav-fixed #layoutSidenav #layoutSidenav_nav, .sb-nav-fixed .sb-topnav {
-position: fixed;
-top: 0;
-right: 0;
-left: 0;
-z-index: 1030;
+
+.fixed-top,
+.sb-nav-fixed #layoutSidenav #layoutSidenav_nav,
+.sb-nav-fixed .sb-topnav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
+
 #layoutAuthentication {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-  }
-  #layoutAuthentication #layoutAuthentication_content {
+}
+
+#layoutAuthentication #layoutAuthentication_content {
     min-width: 0;
     flex-grow: 1;
-  }
-  #layoutAuthentication #layoutAuthentication_footer {
-    min-width: 0;
-  }
+}
 
-  #layoutSidenav {
+#layoutAuthentication #layoutAuthentication_footer {
+    min-width: 0;
+}
+
+#layoutSidenav {
     display: flex;
-  }
-  #layoutSidenav #layoutSidenav_nav {
+}
+
+#layoutSidenav #layoutSidenav_nav {
     flex-basis: 225px;
     flex-shrink: 0;
     transition: transform 0.15s ease-in-out;
     z-index: 1038;
     transform: translateX(-225px);
-  }
-  #layoutSidenav #layoutSidenav_content {
+}
+
+#layoutSidenav #layoutSidenav_content {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -178,4 +164,4 @@ z-index: 1030;
     flex-grow: 1;
     min-height: calc(100vh - 56px);
     margin-left: -225px;
-  }
+}
