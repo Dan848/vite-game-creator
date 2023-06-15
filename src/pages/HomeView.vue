@@ -17,7 +17,7 @@
 
         <div class="col-6 d-flex align-items-center">
           <div><span class="fs-3">Puoi scegliere il tuo personaggio</span> <router-link :to="{ name: 'characters' }"
-              class="btn text-uppercase fw-bold btn-warning">qui</router-link> </div>
+              class="btn text-uppercase fw-bold btn-primary">qui</router-link> </div>
         </div>
       </div>
     </section>
@@ -28,7 +28,7 @@
       </div>
       <div class="row mt-5">
         <div class="col-6">
-          <p class="lh-lg fst-italic">L'alleanza è resa stabile da riti, che comprendono generalmente il <span
+          <p class="lh-lg">L'alleanza è resa stabile da riti, che comprendono generalmente il <span
               class="text-danger">sacrificio</span> comune (seguito
             o meno da un
             vero e proprio passo sacrificale e dal giuramento che invoca l’ira divina su chi lo violi) o
@@ -50,7 +50,7 @@
 
     <section id="have-fun">
       <div>
-        <h2>L'importante rimane però sempre <span class="text-success">divertirsi!</span></h2>
+        <h2>L'importante rimane però sempre <span class="text-secondary">divertirsi!</span></h2>
       </div>
       <div class="row mt-5">
         <div class="col-6">
@@ -61,7 +61,7 @@
           <h3 class="fw-bold">Ti raccomandiamo di leggere il regolamento prima di giocare!</h3>
 
           <h4 class="mt-5">Adesso vai e divertiti avventuriero</h4>
-          <div><button class="text-uppercase fw-semibold btn btn-success">Play</button></div>
+          <div><button class="text-uppercase fw-semibold btn text-bg-secondary">Play</button></div>
         </div>
       </div>
     </section>
