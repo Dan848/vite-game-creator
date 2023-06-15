@@ -6,14 +6,17 @@
                 <!-- Content Col N.1 -->
                 <div class="col">
                     <!-- Div with title and subtitle -->
-                    <div>
-                        <h2>{{ section.title }}</h2>
-                        <p v-if="section.subtitle" class="subtitle">{{ section.subtitle }}</p>
+                    <div class="section-content">
+                        <div>
+                            <h2>{{ section.title }}</h2>
+                            <p v-if="section.subtitle" class="subtitle">{{ section.subtitle }}</p>
+                        </div>
+
+                        <p class="lh-lg">
+                            {{ section.content }}
+                        </p>
                     </div>
 
-                    <p class="lh-lg">
-                        {{ section.content }}
-                    </p>
 
                     <router-link v-if="Object.keys(section.routerLink).length" :to="{ name: section.routerLink.href }"
                         class="btn btn-secondary">{{
@@ -40,6 +43,13 @@ export default {
 <style lang="scss" scoped>
 .bg-inverted {
     background-color: #343A40;
+}
+
+.section-content:hover {
+    transform: scale(1.1);
+    color: white;
+    transition: 1s;
+    cursor: pointer;
 }
 
 .wave {
