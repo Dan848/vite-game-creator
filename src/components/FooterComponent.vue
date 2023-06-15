@@ -1,7 +1,7 @@
 <template>
     <div class="mt-5 bg-dark">
             <div class="container d-flex align-items-center justify-content-between py-4">
-                <div><button class="text-uppercase fw-semibold btn btn-warning">Play</button></div>
+                <div><a class="my-btn"> <span>Gioca</span><i></i></a></div>
                 <div class="footer-social-icon">
                     <span class="text-center">Follow us</span>
                     <ul class="social_icon">
