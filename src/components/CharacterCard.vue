@@ -48,35 +48,20 @@
                     </div>
                 </div>
 
-        <!-- {{ --Riight stats with Speed and Intelligence-- }} -->
-        <div class="right-stats w-50">
-          <!-- {{ --Speed --}} -->
-          <div class="w-100 text-center">
-            <img src="/img/speed.png" alt="speed" class="stats-img" />
-            <span class="fw-bold fs-5">{{ character.speed }} SPD</span>
-          </div>
-
-          <!-- {{ --Intelligence --}} -->
-          <div class="w-100 text-center">
-            <img src="/img/brain.png" alt="intelligence" class="stats-img" />
-            <span class="fw-bold fs-5">{{ character.intelligence }} INT</span>
-          </div>
+                <!-- {{ --Central div with life stat-- }} -->
+                <div class="w-100 text-center pt-2">
+                    <img src="/img/life.png" alt="life" class="stats-img" />
+                    <span class="fw-bold fs-5">{{ character.life }} LIFE</span>
+                </div>
+            </div>
         </div>
-
-        <!-- {{ --Central div with life stat-- }} -->
-        <div class="w-100 text-center pt-2">
-          <img src="/img/life.png" alt="life" class="stats-img" />
-          <span class="fw-bold fs-5">{{ character.life }} LIFE</span>
-        </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script>
 export default {
-  name: "CharacterCard",
-  props: ["character"],
+    name: "CharacterCard",
+    props: ["character"],
 };
 </script>
 
