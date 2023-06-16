@@ -82,7 +82,7 @@ export const store = reactive({
       profile_img: "../",
     },
     {
-      name: "Rossi Aiello",
+      name: "Rossi Aniello",
       role: "Full stack developper",
       description: "mettetevela voi",
       profile_img: "../",
