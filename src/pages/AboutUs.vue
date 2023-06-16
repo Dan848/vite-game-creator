@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h2 class="text-center mt-2">Conosci meglio il nostro Team!</h2>
     <div class="row">
       <AboutUsCard v-for="team in store.Teams" :key="team.id" :team="team" />
     </div>
