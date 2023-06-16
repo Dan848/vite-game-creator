@@ -38,8 +38,7 @@ export const store = reactive({
   },
   AllySection: {
     title: '..Oppure chiama i tuoi amici e forma un alleanza',
-    content: `L'alleanza è resa stabile da riti, che comprendono generalmente il <span
-              class="text-danger">sacrificio</span> comune (seguito
+    content: `L'alleanza è resa stabile da riti, che comprendono generalmente il sacrificio comune (seguito
             o meno da un
             vero e proprio passo sacrificale e dal giuramento che invoca l’ira divina su chi lo violi) o
             qualunque altro
