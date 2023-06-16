@@ -9,8 +9,13 @@ $fa-font-path: "./webfonts" !default;
 
 @import 'bootstrap/scss/bootstrap';
 
+footer {
+    margin-top: 3.5rem;
+}
+
 // HEADER Style config
-header {
+header,
+footer {
     background-color: $primary;
 
     a {
@@ -22,6 +27,7 @@ header {
 .debug {
     border: 2px solid white;
 }
+
 //CUSTOM BUTTON MUST HAVE THIS FORM <a class="my-btn"><span>"TEXT HERE"</span><i></i></a>
 .my-btn {
     position: relative;
