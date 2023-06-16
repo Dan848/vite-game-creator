@@ -1,21 +1,23 @@
 <template>
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
+            <!-- Page navigation -->
+            <ul class="pagination d-flex justify-content-end">
+                <li class="page-item"><button :class="{ 'page-link': true, 'disabled': store.currentPage === 1 }"
+                        @click="getCharacter(store.currentPage - 1)">Previous</button></li>
+                <li class="page-item" v-for="n in store.lastPage"><button
+                        :class="{ 'page-link': true, 'active': store.currentPage === n }" @click="getCharacter(n)">{{ n
+                        }}</button>
+                </li>
+
+                <li class="page-item"><button
+                        :class="{ 'page-link': true, 'disabled': store.currentPage === store.lastPage }"
+                        @click="getCharacter(store.currentPage + 1)">Next</button></li>
+            </ul>
             <CharacterCard v-for="character in store.characters" :key="character.id" :character="character" />
         </div>
 
-        <!-- Page navigation -->
-        <ul class="pagination">
-            <li class="page-item"><button :class="{ 'page-link': true, 'disabled': store.currentPage === 1 }"
-                    @click="getCharacter(store.currentPage - 1)">Previous</button></li>
-            <li class="page-item" v-for="n in store.lastPage"><button
-                    :class="{ 'page-link': true, 'active': store.currentPage === n }" @click="getCharacter(n)">{{ n
-                    }}</button>
-            </li>
 
-            <li class="page-item"><button :class="{ 'page-link': true, 'disabled': store.currentPage === store.lastPage }"
-                    @click="getCharacter(store.currentPage + 1)">Next</button></li>
-        </ul>
     </div>
 </template>
 
