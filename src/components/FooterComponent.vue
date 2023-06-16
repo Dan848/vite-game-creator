@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-5 bg-dark">
+    <div class="mt-5">
             <div class="container d-flex align-items-center justify-content-between py-4">
                 <div><button class="bm-btn">Gioca</button></div>
                 <div class="footer-social-icon">
