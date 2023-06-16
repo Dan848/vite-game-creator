@@ -9,6 +9,12 @@ $fa-font-path: "./webfonts" !default;
 
 @import 'bootstrap/scss/bootstrap';
 
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+.pixel-text {
+    font-family: 'Silkscreen', cursive;
+}
+
 footer {
     margin-top: 3.5rem;
 }
