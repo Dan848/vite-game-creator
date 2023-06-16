@@ -29,7 +29,7 @@ export const store = reactive({
     title: 'Scegli il tuo personaggio e inizia a combattere!',
     subtitle: '',
     content: 'Scegli il tuo personaggio',
-    image: 'https://www.pianetadragonball.it/images/gif-animate-dragon-ball/vegeta/vegeta-fighting-goku.gif',
+    image: 'https://i.pinimg.com/originals/15/82/2a/15822a59adbde051c81d49ccfa8cc6dc.gif',
     inverted: false,
     routerLink: {
       href: 'characters',
