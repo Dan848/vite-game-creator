@@ -14,7 +14,8 @@
                         :class="{ 'page-link': true, 'disabled': store.currentPage === store.lastPage }"
                         @click="getCharacter(store.currentPage + 1)">Next</button></li>
             </ul>
-            <CharacterCard v-for="character in store.characters" :key="character.id" :character="character" />
+            <CharacterCard v-for="character in store.characters" :key="character.id" :character="character"
+                :imgStartUrl="store.imgStartUrl" />
         </div>
 
 

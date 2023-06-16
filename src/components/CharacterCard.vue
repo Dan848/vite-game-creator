@@ -6,7 +6,8 @@
         <!-- {{ --Character Image-- }} -->
         <div class="character-card-image-box">
           <div class="image-character-card py-4">
-            <img src="/img/knight.png" alt="{{ character.name }}" class="w-100 h-100" />
+            <img :src="imgStartUrl + (character.image ? character.image : character.type.image)" :alt="character.name"
+              class="w-100 h-100" />
           </div>
         </div>
 
@@ -61,7 +62,7 @@
 <script>
 export default {
   name: "CharacterCard",
-  props: ["character"],
+  props: ["character", "imgStartUrl"],
 };
 </script>
 
