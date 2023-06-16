@@ -1,17 +1,12 @@
 <template>
   <div class="col-12 col-md-4 g-4 character-col text-white">
     <div class="p-5">
-      <router-link
-        :to="{ name: 'single-character', params: { slug: character.slug } }"
-      >
+      <router-link :to="{ name: 'single-character', params: { slug: character.slug } }"
+        class="text-decoration-none text-white">
         <!-- {{ --Character Image-- }} -->
         <div class="character-card-image-box">
           <div class="image-character-card py-4">
-            <img
-              src="/img/knight.png"
-              alt="{{ character.name }}"
-              class="w-100 h-100"
-            />
+            <img src="/img/knight.png" alt="{{ character.name }}" class="w-100 h-100" />
           </div>
         </div>
 
@@ -85,13 +80,11 @@ export default {
   }
 
   .card-name-border-gradient {
-    border-image-source: linear-gradient(
-      90deg,
-      rgba(57, 35, 77, 1) 0%,
-      rgba(255, 255, 255, 1) 40%,
-      rgba(255, 255, 255, 1) 60%,
-      rgba(57, 35, 77, 1) 100%
-    );
+    border-image-source: linear-gradient(90deg,
+        rgba(57, 35, 77, 1) 0%,
+        rgba(255, 255, 255, 1) 40%,
+        rgba(255, 255, 255, 1) 60%,
+        rgba(57, 35, 77, 1) 100%);
   }
 
   .image-character-show {
