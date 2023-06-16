@@ -5,7 +5,9 @@
     <router-view></router-view>
   </main>
 
-  <FooterComponent />
+  <footer>
+    <FooterComponent />
+  </footer>
 </template>
 
 <script>
