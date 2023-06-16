@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 col-md-4 g-4">
+  <div class="col-12 col-md-6 col-lg-4 g-4">
     <div class="cards-container">
       <div class="card card-one">
         <header>
@@ -48,8 +48,6 @@ export default {
 @use "../assets/partials/var.scss" as *;
 /*** VARS ***/
 
-$main-col: $secondary;
-$sec-col: lighten($primary, 20%);
 $back-col: #c5cae9;
 
 /*** GENERAL STYLES ***/
@@ -59,11 +57,13 @@ $back-col: #c5cae9;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Dosis", sans-serif;
   background: $back-col;
   text-align: center;
 }
+
 .clear {
   clear: both;
 }
@@ -75,6 +75,7 @@ body {
   max-width: 100%;
   margin: 2rem auto;
 }
+
 .card {
   float: left;
   margin: 3rem;
@@ -90,7 +91,8 @@ body {
     position: relative;
     width: 100%;
     height: 60px;
-    background-color: $main-col;
+    background-color: $primary;
+
     &::before,
     &::after {
       content: "";
@@ -101,6 +103,7 @@ body {
       right: 0;
       background: inherit;
     }
+
     &::before {
       -webkit-transform: skewY(-8deg);
       -moz-transform: skewY(-8deg);
@@ -113,6 +116,7 @@ body {
       -o-transform-origin: 100% 100%;
       transform-origin: 100% 100%;
     }
+
     &::after {
       -webkit-transform: skewY(8deg);
       -moz-transform: skewY(8deg);
@@ -125,6 +129,7 @@ body {
       -o-transform-origin: 0 100%;
       transform-origin: 0 100%;
     }
+
     .avatar {
       position: absolute;
       left: 50%;
@@ -137,6 +142,7 @@ body {
       overflow: hidden;
       background: #ccc;
       border: 3px solid #fff;
+
       img {
         position: absolute;
         top: 50%;
@@ -156,6 +162,7 @@ body {
     position: relative;
     margin: 80px 0 30px;
     text-align: center;
+
     &::after {
       content: "";
       position: absolute;
@@ -167,34 +174,41 @@ body {
       background: #000;
     }
   }
+
   .desc {
     padding: 0 1rem 2rem;
     text-align: center;
     line-height: 1.5;
     color: #777;
   }
+
   .contacts {
     width: 200px;
     max-width: 100%;
     margin: 0 auto 3rem;
+
     a {
       display: block;
       width: 33.333333%;
       float: left;
       text-align: center;
-      color: $main-col;
+      color: $primary;
+
       &:hover {
         color: #333;
+
         .fa {
           &::before {
             color: #fff;
           }
+
           &::after {
             width: 100%;
             height: 100%;
           }
         }
       }
+
       .fa {
         position: relative;
         width: 40px;
@@ -203,10 +217,12 @@ body {
         overflow: hidden;
         text-align: center;
         font-size: 1.3em;
+
         &:before {
           position: relative;
           z-index: 1;
         }
+
         &::after {
           content: "";
           position: absolute;
@@ -219,7 +235,7 @@ body {
           -ms-transform: translate(-50%, -50%);
           -o-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-          background: $main-col;
+          background: $primary;
           -webkit-transition: width 0.3s, height 0.3s;
           -moz-transition: width 0.3s, height 0.3s;
           -ms-transition: width 0.3s, height 0.3s;
@@ -227,6 +243,7 @@ body {
           transition: width 0.3s, height 0.3s;
         }
       }
+
       &:last-of-type .fa {
         line-height: 36px;
       }
@@ -236,8 +253,9 @@ body {
   footer {
     position: relative;
     padding: 1rem;
-    background-color: $sec-col;
+    background-color: $secondary;
     text-align: center;
+
     a {
       padding: 0 1rem;
       color: #e2e2e2;
@@ -246,10 +264,12 @@ body {
       -ms-transition: color 0.4s;
       -o-transition: color 0.4s;
       transition: color 0.4s;
+
       &:hover {
-        color: $main-col;
+        color: $primary;
       }
     }
+
     &::before {
       content: "";
       position: absolute;
@@ -257,7 +277,7 @@ body {
       left: 50%;
       margin-left: -15px;
       border: 15px solid transparent;
-      border-bottom-color: $sec-col;
+      border-bottom-color: $secondary;
     }
   }
 }
@@ -272,7 +292,8 @@ body {
     position: relative;
     width: 100%;
     height: 60px;
-    background-color: $main-col;
+    background-color: $primary;
+
     &::after {
       content: "";
       position: absolute;
@@ -293,6 +314,7 @@ body {
       -o-transform-origin: 0 100%;
       transform-origin: 0 100%;
     }
+
     .avatar {
       position: absolute;
       left: 50%;
@@ -305,6 +327,7 @@ body {
       overflow: hidden;
       background: #ccc;
       border: 3px solid #fff;
+
       img {
         position: absolute;
         top: 50%;
@@ -324,6 +347,7 @@ body {
     position: relative;
     margin: 80px 0 30px;
     text-align: center;
+
     &::after {
       content: "";
       position: absolute;
@@ -335,33 +359,40 @@ body {
       background: #000;
     }
   }
+
   .desc {
     padding: 0 1rem 2rem;
     text-align: center;
     line-height: 1.5;
     color: #777;
   }
+
   .contacts {
     width: 200px;
     max-width: 100%;
     margin: 0 auto 3.5rem;
+
     a {
       display: block;
       width: 33.333333%;
       float: left;
       text-align: center;
-      color: $main-col;
+      color: $primary;
+
       &:hover {
         color: #333;
+
         .fa {
           &::before {
             color: #fff;
           }
+
           &::after {
             top: 0;
           }
         }
       }
+
       .fa {
         position: relative;
         width: 40px;
@@ -369,12 +400,14 @@ body {
         line-height: 39px;
         overflow: hidden;
         text-align: center;
-        border: 2px solid $main-col;
+        border: 2px solid $primary;
         border-radius: 50%;
+
         &:before {
           position: relative;
           z-index: 1;
         }
+
         &::after {
           content: "";
           position: absolute;
@@ -387,9 +420,10 @@ body {
           -ms-transition: top 0.3s;
           -o-transition: top 0.3s;
           transition: top 0.3s;
-          background: $main-col;
+          background: $primary;
         }
       }
+
       &:last-of-type .fa {
         line-height: 36px;
       }
@@ -399,14 +433,16 @@ body {
   footer {
     position: relative;
     height: 45px;
-    background-color: $sec-col;
+    background-color: $secondary;
     text-align: center;
+
     p {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
       z-index: 1;
+
       a {
         padding: 0 1rem;
         color: #e2e2e2;
@@ -415,11 +451,13 @@ body {
         -ms-transition: color 0.4s;
         -o-transition: color 0.4s;
         transition: color 0.4s;
+
         &:hover {
-          color: $main-col;
+          color: $primary;
         }
       }
     }
+
     &::before {
       z-index: 0;
       content: "";
