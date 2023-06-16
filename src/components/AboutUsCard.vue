@@ -4,7 +4,7 @@
       <div class="card card-one">
         <div class="header-card">
           <div class="avatar">
-            <img src="{{ team.profile_img }}" alt="{{ team.name }}" />
+            <img :src="team.profile_img" :alt="team.name" />
           </div>
         </div>
 
