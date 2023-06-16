@@ -1,6 +1,7 @@
 <template>
   <div class="text-center mt-5">
-    <h1 id="home-title">Benvenuto su <span class="bugText px-3">Bug</span><span class="makersText px-3">Makers</span>
+    <h1 id="home-title" class="pixel-text">Benvenuto su <span class="bugText px-3">Bug</span><span
+        class="makersText px-3">Makers</span>
       Official Game!</h1>
   </div>
 
