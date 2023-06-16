@@ -10,10 +10,6 @@ $fa-font-path: "./webfonts" !default;
 @import 'bootstrap/scss/bootstrap';
 
 // HEADER Style config
-body {
-    background-color: $body-color;
-}
-
 header {
     background-color: $primary;
 
