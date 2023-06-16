@@ -1,18 +1,19 @@
 <template>
-  <div class="col-12 col-md-4 g-4 character-col text-white">
+  <div class="col-12 col-md-6 col-lg-4 g-4 character-col text-white">
     <div class="p-5">
       <router-link :to="{ name: 'single-character', params: { slug: character.slug } }"
-        class="text-decoration-none text-white">
+        class="text-decoration-none text-white d-flex flex-column">
         <!-- {{ --Character Image-- }} -->
         <div class="character-card-image-box">
           <div class="image-character-card py-4">
-            <img :src="imgStartUrl + (character.image ? character.image : character.type.image)" :alt="character.name"
-              class="w-100 h-100" />
+            <!-- <img :src="imgStartUrl + (character.image ? character.image : character.type.image)" :alt="character.name"
+              class="w-100 h-100" /> -->
+            <img src="img/knight.png" alt="" class="w-100 h-100">
           </div>
         </div>
 
         <!-- {{ --Character Name-- }} -->
-        <div class="text-center card-name-border card-name-border-gradient">
+        <div class="card-name-border card-name-border-gradient w-75 d-flex align-self-center justify-content-center">
           <h4 class="fs-2">{{ character.name }}</h4>
         </div>
 
