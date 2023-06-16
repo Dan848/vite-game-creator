@@ -7,7 +7,7 @@
                 <div class="col">
                     <!-- Div with title and subtitle -->
                     <div class="section-content">
-                        <div>
+                        <div class="pixel-text">
                             <h2>{{ section.title }}</h2>
                             <p v-if="section.subtitle" class="subtitle">{{ section.subtitle }}</p>
                         </div>
@@ -19,8 +19,11 @@
 
 
                     <router-link v-if="Object.keys(section.routerLink).length" :to="{ name: section.routerLink.href }"
-                        class="btn btn-secondary">{{
-                            section.routerLink.buttonText }}</router-link>
+                        class="text-decoration-none">
+                        <button class="bm-btn">
+                            {{ section.routerLink.buttonText }}
+                        </button>
+                    </router-link>
                 </div>
 
                 <!-- Image Col -->
