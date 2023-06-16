@@ -28,79 +28,56 @@ footer {
     border: 2px solid white;
 }
 
-//CUSTOM BUTTON MUST HAVE THIS FORM <a class="my-btn"><span>"TEXT HERE"</span><i></i></a>
-.my-btn {
-    position: relative;
-    background: #444;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
+//CUSTOM BUTTON
+.bm-btn {
+    font-family: 'Silkscreen', cursive;
     font-size: 1.5rem;
-    letter-spacing: 0.1rem;
-    padding: 0.75rem 1.5rem;
-    transition: 0.5s;
-}
-
-.my-btn:hover {
-    letter-spacing: 0.25rem;
-    background: $secondary;
-    color: $secondary;
-    box-shadow: 0 0 50px 10px $secondary;
     cursor: pointer;
-}
-
-.my-btn::before {
-    content: "";
-    position: absolute;
-    inset: 2px;
-    background: #27282c;
-}
-
-.my-btn span {
+    color: white;
+    width: 120px;
+    height: 45px;
+    background: #810d20;
+    border: 0px;
     position: relative;
-    z-index: 1;
+    transition: .3s;
+    box-shadow:
+        inset -2px 2px 1px 1px #b20e2a,
+        inset -2px -2px 1px 1px #4d0713,
+        inset 2px 0px 1px 1px #990d25
 }
 
-.my-btn i {
+.bm-btn:active {
+    top: 2px;
+}
+
+.bm-btn:hover {
+    background: #ffb302;
+    box-shadow:
+        inset -2px 2px 1px 1px #ffc301,
+        inset -2px -2px 1px 1px #b27d01,
+        inset 2px 0px 1px 1px #cc8f01
+}
+
+.bm-btn::after {
+    content: '';
+    background: #000;
     position: absolute;
-    inset: 0;
-    display: block;
+    left: -2%;
+    top: 0;
+    width: 104%;
+    height: 100%;
+    z-index: -1
 }
 
-.my-btn i::before {
-    content: "";
+.bm-btn::before {
+    content: '';
+    background: #000;
     position: absolute;
-    top: -3.5px;
-    left: 80%;
-    width: 10px;
-    height: 5px;
-    border: 2px solid $secondary;
-    background: #27282c;
-    transform: translateX(-50%);
-    transition: 0.5s;
-}
-
-.my-btn:hover i::before {
-    left: 20%;
-    width: 20px;
-}
-
-.my-btn i::after {
-    content: "";
-    position: absolute;
-    bottom: -3.5px;
-    left: 20%;
-    width: 10px;
-    height: 5px;
-    border: 2px solid $secondary;
-    background: #27282c;
-    transform: translateX(-50%);
-    transition: 0.5s;
-}
-
-.my-btn:hover i::after {
-    left: 80%;
-    width: 20px;
+    left: 0;
+    top: -5%;
+    width: 100%;
+    height: 110%;
+    z-index: -2
 }
 
 
