@@ -1,7 +1,8 @@
 <template>
   <div class="text-center mt-5">
-    <h1 id="home-title" class="pixel-text">Benvenuto su <span class="bugText px-3">Bug</span><span
-        class="makersText px-3">Makers</span>
+    <h1 id="home-title" class="pixel-text">Benvenuto su 
+      <span class="bugText px-3 rounded-start-3">Bug</span>
+      <span class="makersText px-3 rounded-end-3">Makers</span>
       Official Game!</h1>
   </div>
 
@@ -43,11 +44,13 @@ export default {
   font-size: 45px;
 
   .bugText {
-    background-color: $primary;
+    background-color: #c0c0c0;
+    color: $primary;
   }
 
   .makersText {
     background-color: $secondary;
+    color: $primary;
   }
 }
 

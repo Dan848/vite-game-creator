@@ -44,13 +44,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/partials/var.scss' as *;
 .bg-inverted {
-    background-color: #343A40;
+    background-color: #c0c0c0;
+    color: $primary;
+    .section-content:hover{
+        color: $primary;
+    }
 }
 
 .section-content:hover {
     transform: scale(1.1);
-    color: white;
+    color: $secondary;
     transition: 1s;
     cursor: pointer;
 }

@@ -14,7 +14,9 @@ $fa-font-path: "./webfonts" !default;
 .pixel-text {
     font-family: 'Silkscreen', cursive;
 }
-
+body{
+    background-color: $primary;
+}
 footer {
     margin-top: 3.5rem;
 }
@@ -40,17 +42,17 @@ header{
     width: 120px;
     height: 45px;
     // main color
-    background: $primary;
+    background: #c0c0c0;
     border: 0px;
     position: relative;
     transition: .3s;
     box-shadow:
         // up and right color shadow
-        inset -2px 2px 1px 1px #b20e2a,
+        inset -2px 2px 1px 1px #cccccc,
         // bottom color shadow
-        inset -2px -2px 1px 1px #4d0713,
+        inset -2px -2px 1px 1px #757575,
         // left color shadow
-        inset 2px 0px 1px 1px #990d25
+        inset 2px 0px 1px 1px #8d8d8d
 }
 
 .bm-btn:active {
