@@ -1,14 +1,14 @@
 <template>
-  <div class="col-12 col-md-6 col-lg-4 g-4">
+  <div class="col-12 col-md-6 col-lg-4">
     <div class="cards-container">
       <div class="card card-one">
-        <header>
+        <div class="header-card">
           <div class="avatar">
             <img src="{{ team.profile_img }}" alt="{{ team.name }}" />
           </div>
-        </header>
+        </div>
 
-        <h3>{{ team.name }}</h3>
+        <h3 class="text-primary">{{ team.name }}</h3>
         <div class="desc">
           <p>Ruolo: {{ team.role }}</p>
           <hr />
@@ -22,12 +22,12 @@
           <div class="clear"></div>
         </div>
 
-        <footer>
+        <div class="footer-card">
           <a href=""><i class="fa-brands fa-facebook"></i></a>
           <a href=""><i class="fa-brands fa-linkedin"></i></a>
           <a href=""><i class="fa-brands fa-twitter"></i></a>
           <a href=""><i class="fa-brands fa-instagram"></i></a>
-        </footer>
+        </div>
       </div>
       <div class="clear"></div>
     </div>
@@ -87,11 +87,11 @@ body {
   background: #fff;
   box-shadow: 0 10px 7px -5px rgba(#000, 0.4);
 
-  header {
+  .header-card {
     position: relative;
     width: 100%;
     height: 60px;
-    background-color: $primary;
+    background-color: $secondary;
 
     &::before,
     &::after {
@@ -250,7 +250,7 @@ body {
     }
   }
 
-  footer {
+  .footer-card {
     position: relative;
     padding: 1rem;
     background-color: $secondary;
@@ -258,7 +258,7 @@ body {
 
     a {
       padding: 0 1rem;
-      color: #e2e2e2;
+      color: black;
       -webkit-transition: color 0.4s;
       -moz-transition: color 0.4s;
       -ms-transition: color 0.4s;
@@ -288,7 +288,7 @@ body {
   background: #fff;
   box-shadow: 0 10px 7px -5px rgba(#000, 0.4);
 
-  header {
+  .header-card {
     position: relative;
     width: 100%;
     height: 60px;
@@ -430,7 +430,7 @@ body {
     }
   }
 
-  footer {
+  .footer-card {
     position: relative;
     height: 45px;
     background-color: $secondary;
