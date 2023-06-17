@@ -47,13 +47,13 @@
             </p>
             <hr />
             <p class="d-flex justify-content-between">
-              <span class="pixel-text"> Vita:</span>
+              <span class="pixel-text">Vita:</span>
 
               <span class="fw-bold"> {{ store.character.life }}</span>
             </p>
             <hr />
             <p class="d-flex justify-content-between">
-              <span class="pixel-text"> Categoria</span>
+              <span class="pixel-text">Classe</span>
               <span class="fw-bold">{{ store.character.type.name }}</span>
             </p>
             <hr />
