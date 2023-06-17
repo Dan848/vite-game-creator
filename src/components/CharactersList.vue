@@ -4,7 +4,7 @@
             <!-- Page navigation -->
             <ul class="pagination d-flex justify-content-end">
                 <li class="page-item"><button :class="{ 'page-link': true, 'disabled': store.currentPage === 1 }"
-                        @click="getCharacter(store.currentPage - 1)">Previous</button></li>
+                        @click="getCharacter(store.currentPage - 1)"><i class="fa-solid fa-angle-left"></i></button></li>
                 <li class="page-item" v-for="n in store.lastPage"><button
                         :class="{ 'page-link': true, 'active': store.currentPage === n }" @click="getCharacter(n)">{{ n
                         }}</button>
@@ -12,7 +12,7 @@
 
                 <li class="page-item"><button
                         :class="{ 'page-link': true, 'disabled': store.currentPage === store.lastPage }"
-                        @click="getCharacter(store.currentPage + 1)">Next</button></li>
+                        @click="getCharacter(store.currentPage + 1)"><i class="fa-solid fa-angle-right"></i></button></li>
             </ul>
             <CharacterCard v-for="character in store.characters" :key="character.id" :character="character"
                 :imgStartUrl="store.imgStartUrl" />
@@ -55,4 +55,15 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../assets//partials/var.scss' as *;
+
+.pagination {
+    .page-item {
+        button {
+            background-color: $success;
+            color: $primary;
+        }
+    }
+}
+</style>
