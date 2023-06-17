@@ -18,10 +18,14 @@
                 <div class="collapse navbar-collapse " id="navbarNavDropdown">
                     <ul class="navbar-nav ">
                         <!-- {{ --Simple Anchor Link-- }} -->
-                        <li class="nav-item text-white" v-for="item in store.headerLinks" >
-                            <router-link :to="{name: item.routeName}" class="mx-2">
-                                {{ item.label }}    
+                        <li class="nav-item text-white" v-for="item in store.headerLinks">
+                            <router-link :to="{ name: item.routeName }" class="mx-2">
+                                {{ item.label }}
                             </router-link>
+                        </li>
+
+                        <li class="nav-item text-white ps-2">
+                            <a href="http://localhost:8000">Area Riservata</a>
                         </li>
                     </ul>
                 </div>
@@ -42,26 +46,27 @@
         </ul>
 
     </header> -->
-
 </template>
 
 <script>
 import { store } from '../data/store';
-    export default {
+export default {
     name: 'HeaderComponent',
     data() {
         return {
             store
-            }
         }
     }
+}
 </script>
 
 <style lang="scss" scoped>
 @use '../assets/partials/var.scss' as *;
-a{
+
+a {
     text-decoration: none;
-    &:hover{
+
+    &:hover {
         color: $secondary;
     }
 }
