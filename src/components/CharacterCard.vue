@@ -1,28 +1,19 @@
 <template>
-  <div class="col-12 col-md-6 col-lg-4 g-4 character-col text-white">
+  <div class="col-12 col-md-6 col-lg-4 g-4 character-col">
     <div class="p-5">
-      <router-link
-        :to="{ name: 'single-character', params: { slug: character.slug } }"
-        class="text-decoration-none text-white d-flex flex-column"
-      >
+      <router-link :to="{ name: 'single-character', params: { slug: character.slug } }"
+        class="text-decoration-none text-primary d-flex flex-column">
         <!-- {{ --Character Image-- }} -->
         <div class="character-card-image-box">
           <div class="image-character-card py-4">
-            <img
-              :src="
-                imgStartUrl +
-                (character.image ? character.image : character.type.image)
-              "
-              :alt="character.name"
-              class="w-100 h-100"
-            />
+            <img :src="imgStartUrl +
+              (character.image ? character.image : character.type.image)
+              " :alt="character.name" class="w-100 h-100" />
           </div>
         </div>
 
         <!-- {{ --Character Name-- }} -->
-        <div
-          class="card-name-border card-name-border-gradient w-75 d-flex align-self-center justify-content-center"
-        >
+        <div class="card-name-border card-name-border-gradient w-75 d-flex align-self-center justify-content-center">
           <h4 class="fs-2">{{ character.name }}</h4>
         </div>
 
@@ -32,7 +23,7 @@
           <div class="left-stats w-50">
             <!-- {{ --Strength --}} -->
             <div class="w-100 text-center">
-              <img src="/img/sword.png" alt="attack" class="stats-img" />
+              <img src="/img/strength.png" alt="attack" class="stats-img" />
               <span class="fw-bold fs-5">{{ character.strength }} STR</span>
             </div>
 
@@ -77,8 +68,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/partials/var.scss' as *;
+
 .character-col {
-  background-image: url("/img/card-bg.png");
+  background-image: url("/img/cardbg.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -91,13 +84,11 @@ export default {
   }
 
   .card-name-border-gradient {
-    border-image-source: linear-gradient(
-      90deg,
-      rgba(57, 35, 77, 1) 0%,
-      rgba(255, 255, 255, 1) 40%,
-      rgba(255, 255, 255, 1) 60%,
-      rgba(57, 35, 77, 1) 100%
-    );
+    border-image-source: linear-gradient(90deg,
+        $primary 0%,
+        $secondary 40%,
+        $secondary 60%,
+        $primary 100%);
   }
 
   .image-character-show {
@@ -116,7 +107,6 @@ export default {
 
   .stats-img {
     width: 20px;
-    filter: invert(1);
     margin-right: 0.5rem;
   }
 
