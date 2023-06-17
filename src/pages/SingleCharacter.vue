@@ -60,7 +60,7 @@
             <!-- IN ATTESA CHE VENGAO SEEDATI GLI ITEM -->
             <!-- <p class="d-flex justify-content-between">
               <span class="pixel-text"> Arma</span>
-              <span class="fw-bold">{{ store.character.item.name }}</span>
+              <span class="fw-bold">{{ store.character.items.name }}</span>
             </p>
             <hr /> -->
           </div>
