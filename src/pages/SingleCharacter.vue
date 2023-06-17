@@ -57,15 +57,30 @@
               <span class="fw-bold">{{ store.character.type.name }}</span>
             </p>
             <hr />
+            <!-- IN ATTESA CHE VENGAO SEEDATI GLI ITEM -->
+            <!-- <p class="d-flex justify-content-between">
+              <span class="pixel-text"> Arma</span>
+              <span class="fw-bold">{{ store.character.item.name }}</span>
+            </p>
+            <hr /> -->
           </div>
           <p class="p-3 d-flex justify-content-between col-12 flex-column">
-            <span class="text-secondary py-3 pixel-text">Descrizione:</span>
+            <span class="text-secondary text-center fs-4 py-3 pixel-text"
+              >Descrizione</span
+            >
             <span
               v-html="formatDesc(store.character.type.description)"
-              class="bm-desc fw-bold text-capitalize fs-6"
+              class="bm-desc p-3 fw-bold text-capitalize fs-6"
             ></span>
           </p>
         </div>
+      </div>
+      <div class="d-flex justify-content-start w-100 mt-4 ms-5">
+        <router-link
+          class="bm-btn text-decoration-none text-center"
+          :to="{ name: 'characters' }"
+          ><i class="fa-sharp fa-solid fa-arrow-left"></i>
+        </router-link>
       </div>
     </div>
   </div>
@@ -81,6 +96,7 @@ import { store } from "../data/store";
 import axios from "axios";
 export default {
   name: "SingleCharacter",
+
   components: {
     LoaderComponent,
   },
