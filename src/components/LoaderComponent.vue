@@ -14,8 +14,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "../assets/partials/var.scss" as *;
 body {
-  background-color: #222;
+  background-color: $primary;
 }
 
 #loading-wrapper {

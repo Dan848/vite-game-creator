@@ -16,7 +16,6 @@
               :alt="character.name"
               class="w-100 h-100"
             />
-            <!-- <img src="img/knight.png" alt="" class="w-100 h-100"> -->
           </div>
         </div>
 
