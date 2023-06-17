@@ -15,8 +15,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <!-- {{ --Navbar Start-- }} -->
-                <div class="collapse navbar-collapse " id="navbarNavDropdown">
-                    <ul class="navbar-nav ">
+                <div class="collapse navbar-collapse w-100" id="navbarNavDropdown">
+                    <ul class="navbar-nav d-flex w-100">
                         <!-- {{ --Simple Anchor Link-- }} -->
                         <li class="nav-item text-white" v-for="item in store.headerLinks">
                             <router-link :to="{ name: item.routeName }" class="mx-2">
@@ -24,8 +24,11 @@
                             </router-link>
                         </li>
 
-                        <li class="nav-item text-white ps-2">
-                            <a href="http://localhost:8000">Area Riservata</a>
+                        <li class="text-white ps-2 ms-auto">
+                            <a href="http://localhost:8000">
+                                Area Riservata
+                                <i class="fas fa-user fa-fw"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
