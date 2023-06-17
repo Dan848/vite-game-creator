@@ -21,7 +21,7 @@
 
                     <!-- List of Character Items -->
                     <div class="character-items">
-                        <h4 class="pixel-text text-center">Items</h4>
+                        <h5 class="pixel-text text-center">Items</h5>
                         <ul>
                             <!-- Here goes li elements that cycle for every item -->
                         </ul>
