@@ -55,4 +55,15 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../assets//partials/var.scss' as *;
+
+.pagination {
+    .page-item {
+        button {
+            background-color: $success;
+            color: $primary;
+        }
+    }
+}
+</style>
