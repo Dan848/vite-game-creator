@@ -26,10 +26,11 @@ export const store = reactive({
     },
   ],
   FightSection: {
-    title: 'Scegli il tuo personaggio e inizia a combattere!',
-    subtitle: '',
-    content: 'Scegli il tuo personaggio',
-    image: 'https://i.pinimg.com/originals/15/82/2a/15822a59adbde051c81d49ccfa8cc6dc.gif',
+    title: "Scegli il tuo personaggio e inizia a combattere!",
+    subtitle: "",
+    content: "Scegli il tuo personaggio",
+    image:
+      "https://i.pinimg.com/originals/15/82/2a/15822a59adbde051c81d49ccfa8cc6dc.gif",
 
     inverted: false,
     routerLink: {

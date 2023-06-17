@@ -1,6 +1,6 @@
 <template>
   <div class="col-12 col-md-6 col-lg-4">
-    <div class="cards-container">
+    <div class="cards-container d-flex justify-content-center">
       <div class="card card-one">
         <div class="header-card">
           <div class="avatar">
@@ -12,7 +12,7 @@
         <div class="desc">
           <p>Ruolo: {{ team.role }}</p>
           <hr />
-          <p>{{ team.description }}</p>
+          <p class="bm-desc">{{ team.description }}</p>
           <hr />
         </div>
         <div class="contacts">
@@ -63,10 +63,6 @@ body {
   text-align: center;
 }
 
-.clear {
-  clear: both;
-}
-
 /*** CARD STLES ***/
 
 .cards-container {
@@ -77,12 +73,12 @@ body {
 
 .card {
   float: left;
-  margin: 3rem;
 }
 
 .card-one {
   position: relative;
   width: 300px;
+
   background: #fff;
   box-shadow: 0 10px 7px -5px rgba(#000, 0.4);
 
@@ -179,6 +175,11 @@ body {
     text-align: center;
     line-height: 1.5;
     color: #777;
+
+    .bm-desc {
+      height: 100px;
+      overflow-y: auto;
+    }
   }
 
   .contacts {
