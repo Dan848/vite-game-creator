@@ -11,26 +11,17 @@ $fa-font-path: "./webfonts" !default;
 
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
+
+//GENERAL
+:root{
+    --bs-body-bg: #1d1d1d;
+}
+
 .pixel-text {
     font-family: 'Silkscreen', cursive;
 }
 body{
     background-color: $primary;
-}
-footer {
-    margin-top: 3.5rem;
-}
-
-// HEADER Style config
-header{
-    a {
-        color: white;
-    }
-}
-
-//GENERAL
-.debug {
-    border: 2px solid white;
 }
 
 //CUSTOM BUTTON
@@ -92,9 +83,11 @@ header{
     height: 110%;
     z-index: -2
 }
+//CUSTOM BUTTON /
 
 
-// CHARACTER INFO Page Style Config
+//CHARACTER START
+// Character Info Page Style Config
 .info {
     h1 {
         color: $secondary;
@@ -112,40 +105,54 @@ header{
         }
     }
 }
-
-
-// CHARACTER LIST Page Style Config
+// Character List Page Style Config
 .info-box {
     display: inline-block;
     background-color: $primary;
     width: 30px;
     height: 30px;
 }
+//CHARACTER END
 
-.form-floating {
-    >label {
-        top: -5px;
-
-        &::after {
-            background-color: transparent !important;
+//FORM
+.form-floating{
+    > label{
+        top: -8px;
+        &::after{
+            background-color: transparent!important;
         }
     }
 
-    .form-control {
+    textarea{
+        height: 8rem!important;
+    }
+
+    .form-control,.form-select {
         border-top: none;
         border-left: none;
         border-right: none;
         border-bottom: 0px solid $primary;
         border-radius: 0;
         box-shadow: 0 2px 0 0 $primary;
-
-        &:focus {
+        &:focus{
             border: 0px solid $primary;
-            box-shadow: 0 0 0 2px $primary;
+            box-shadow: 0 0 10px 5px $primary;
             // border-bottom: 0px solid $primary;
             // box-shadow: 0 0 0.8rem 0.25rem $primary;
         }
     }
+}
+
+// HEADER
+header{
+    a {
+        color: white;
+    }
+}
+
+//FOOTER
+footer {
+    margin-top: 3.5rem;
 }
 
 //Imported CSS
@@ -167,11 +174,9 @@ header{
     background-color: var(--bs-breadcrumb-bg);
     border-radius: var(--bs-breadcrumb-border-radius);
 }
-
 .breadcrumb-item+.breadcrumb-item {
     padding-left: var(--bs-breadcrumb-item-padding-x);
 }
-
 .breadcrumb-item+.breadcrumb-item::before {
     float: left;
     padding-right: var(--bs-breadcrumb-item-padding-x);
@@ -180,11 +185,9 @@ header{
         /* rtl: var(--bs-breadcrumb-divider, "/") */
     ;
 }
-
 .breadcrumb-item.active {
     color: var(--bs-breadcrumb-item-active-color);
 }
-
 .fixed-top,
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav,
 .sb-nav-fixed .sb-topnav {
@@ -194,26 +197,21 @@ header{
     left: 0;
     z-index: 1030;
 }
-
 #layoutAuthentication {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-
 #layoutAuthentication #layoutAuthentication_content {
     min-width: 0;
     flex-grow: 1;
 }
-
 #layoutAuthentication #layoutAuthentication_footer {
     min-width: 0;
 }
-
 #layoutSidenav {
     display: flex;
 }
-
 #layoutSidenav #layoutSidenav_nav {
     flex-basis: 225px;
     flex-shrink: 0;
@@ -221,7 +219,6 @@ header{
     z-index: 1038;
     transform: translateX(-225px);
 }
-
 #layoutSidenav #layoutSidenav_content {
     position: relative;
     display: flex;

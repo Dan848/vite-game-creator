@@ -25,6 +25,8 @@ body {
   height: 100%;
   left: 0;
   top: 0;
+  background-color: $primary;
+  z-index: 999;
 }
 
 #loading-text {
