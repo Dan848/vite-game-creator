@@ -21,7 +21,7 @@
 
                     <!-- Character Items -->
                     <div class="character-items">
-                        <h5 v-if="store.selectedWeapon[player1]" class="pixel-text text-center">{{ getSelectedItem(store.playGame.player1.items, "player1").name }}</h5>
+                        <h5 v-if="store.selectedWeapon.player1" class="pixel-text text-center">{{ getSelectedItem(store.playGame.player1.items, "player1").name }}</h5>
                         <h5 class="pixel-text text-center" v-else>Nessun Arma</h5>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
 
                     <!-- List of Character Items -->
                     <div class="character-items">
-                        <h5 v-if="store.selectedWeapon[player2]" class="pixel-text text-center">{{ getSelectedItem(store.playGame.player2.items, "player2").name }}</h5>
+                        <h5 v-if="store.selectedWeapon.player2" class="pixel-text text-center">{{ getSelectedItem(store.playGame.player2.items, "player2").name }}</h5>
                         <h5 class="pixel-text text-center" v-else>Nessun Arma</h5>                        
                     </div>
 
