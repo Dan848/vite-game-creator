@@ -34,14 +34,11 @@
                 {{ item.label }}
               </router-link>
             </li>
-
-            <li class="text-white ps-2 ms-auto">
-              <a href="http://localhost:8000">
-                Area Riservata
-                <i class="fas fa-user fa-fw"></i>
-              </a>
-            </li>
           </ul>
+          <a href="http://localhost:8000">
+            Area Riservata
+            <i class="fas fa-user fa-fw"></i>
+          </a>
         </div>
       </div>
     </nav>
