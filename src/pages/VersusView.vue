@@ -1,11 +1,15 @@
 <template>
     <div class="container mt-5">
-        <div class="row">
+
+
+
+        <div class="row my-5">
             <!-- First character -->
             <div class="col-4">
-                <h3 class="pixel-text text-center">{{store.playGame.player1.name}}</h3>
+                <h3 class="pixel-text text-center">{{ store.playGame.player1.name }}</h3>
                 <div>
-                    <img :src="store.imgStartUrl + (store.playGame.player1.image ? store.playGame.player1.image : store.playGame.player1.type.image)" alt="characterOne" class="w-100 h-100">
+                    <img :src="store.imgStartUrl + (store.playGame.player1.image ? store.playGame.player1.image : store.playGame.player1.type.image)"
+                        alt="characterOne" class="w-100 h-100">
                 </div>
 
                 <!-- Character Content -->
@@ -21,23 +25,90 @@
 
                     <!-- Character Items -->
                     <div class="character-items">
-                        <h5 v-if="store.selectedWeapon[player1]" class="pixel-text text-center">{{ getSelectedItem(store.playGame.player1.items, "player1").name }}</h5>
+                        <h5 v-if="store.selectedWeapon[player1]" class="pixel-text text-center">{{
+                            getSelectedItem(store.playGame.player1.items, "player1").name }}</h5>
                         <h5 class="pixel-text text-center" v-else>Nessun Arma</h5>
                     </div>
                 </div>
+
+                <!-- Character Stats and Play Button -->
+                <div class="d-flex flex-column align-items-center my-5">
+                    <div class="d-flex w-50 justify-content-between">
+                        <div class="px-2 d-flex align-items-center">
+                            <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
+                            <span class="fw-bold fs-5">{{ store.playGame.player1.strength }} STR</span>
+                        </div>
+
+                        <div class="px-2 d-flex align-items-center">
+                            <img src="/img/stats/shield.png" alt="defence" class="stats-img" />
+                            <span class="fw-bold fs-5">{{ store.playGame.player1.defence }} DEF</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex w-50 justify-content-between">
+                        <div class="px-2 d-flex align-items-center">
+                            <img src="/img/stats/speed.png" alt="attack" class="stats-img" />
+                            <span class="fw-bold fs-5">{{ store.playGame.player1.speed }} SPD</span>
+                        </div>
+
+                        <div class="px-2 d-flex align-items-center">
+                            <img src="/img/stats/brain.png" alt="defence" class="stats-img" />
+                            <span class="fw-bold fs-5">{{ store.playGame.player1.intelligence }} INT</span>
+                        </div>
+                    </div>
+
+                    <div class="px-2 d-flex align-items-center">
+                        <img src="/img/stats/life.png" alt="defence" class="stats-img" />
+                        <span class="fw-bold fs-5">{{ store.playGame.player1.life }} LIFE</span>
+                    </div>
+
+                    <!-- Play Button -->
+                    <div class="mt-4">
+                        <button class="bm-btn">Lancia</button>
+                    </div>
+                </div>
+
+
+
             </div>
 
-            <!-- VERSUS IMAGE -->
-            <div class="col-4 d-flex align-items-center">
-                <img class="img-fluid" src="https://media3.giphy.com/media/TiJfX5nRSnvshdijyb/giphy.gif?cid=6c09b9528rfwmlhyl622lwh4g81ek7hrpgfsxof2l718oqsr&ep=v1_stickers_related&rid=giphy.gif&ct=ts"
-                    alt="versusImage">
+            <!-- VERSUS IMAGE and logs-->
+            <div class="col-4 d-flex align-items-center flex-column position-relative">
+                <!-- Fight logs -->
+                <div class="d-flex w-100">
+                    <div class="w-100">
+                        <h2 class="text-center pixel-text">History</h2>
+                        <div class="fight-logs">
+                            <ul>
+                                <!-- Fight logs li (cycle them in a fight logs phrase array) -->
+                                <li class="event-log">test1</li>
+                                <li class="event-log">test1</li>
+                                <li class="event-log">test1</li>
+                                <li class="event-log">test1</li>
+                                <li class="event-log">test1</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <img class="img-fluid"
+                        src="https://media3.giphy.com/media/TiJfX5nRSnvshdijyb/giphy.gif?cid=6c09b9528rfwmlhyl622lwh4g81ek7hrpgfsxof2l718oqsr&ep=v1_stickers_related&rid=giphy.gif&ct=ts"
+                        alt="versusImage">
+                </div>
+
+                <div class="reset-btn">
+                    <button class="bm-btn">Reset</button>
+                </div>
+
             </div>
 
             <!-- Second character -->
             <div class="col-4">
-                <h3 class="pixel-text text-center">{{store.playGame.player2.name}}</h3>
+                <h3 class="pixel-text text-center">{{ store.playGame.player2.name }}</h3>
                 <div>
-                    <img :src="store.imgStartUrl + (store.playGame.player2.image ? store.playGame.player2.image : store.playGame.player2.type.image)" alt="characterOne" class="w-100 h-100">
+                    <img :src="store.imgStartUrl + (store.playGame.player2.image ? store.playGame.player2.image : store.playGame.player2.type.image)"
+                        alt="characterOne" class="w-100 h-100">
                 </div>
 
                 <!-- Character Content -->
@@ -47,16 +118,53 @@
                     <div class="character-type">
                         <h4 class="pixel-text text-center">
                             <!-- Here Goes character type -->
-                            {{store.playGame.player2.type.name}}
+                            {{ store.playGame.player2.type.name }}
                         </h4>
                     </div>
 
                     <!-- List of Character Items -->
                     <div class="character-items">
-                        <h5 v-if="store.selectedWeapon[player2]" class="pixel-text text-center">{{ getSelectedItem(store.playGame.player2.items, "player2").name }}</h5>
-                        <h5 class="pixel-text text-center" v-else>Nessun Arma</h5>                        
+                        <h5 v-if="store.selectedWeapon[player2]" class="pixel-text text-center">{{
+                            getSelectedItem(store.playGame.player2.items, "player2").name }}</h5>
+                        <h5 class="pixel-text text-center" v-else>Nessun Arma</h5>
+                    </div>
+                </div>
+
+                <!-- Character Stats and Play Button -->
+                <div class="d-flex flex-column align-items-center my-5">
+
+                    <div class="d-flex w-50 justify-content-between">
+                        <div class="px-2 d-flex align-items-center">
+                            <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
+                            <span class="fw-bold fs-5">{{ store.playGame.player2.strength }} STR</span>
+                        </div>
+                        <div class="px-2 d-flex align-items-center">
+                            <img src="/img/stats/shield.png" alt="defence" class="stats-img" />
+                            <span class="fw-bold fs-5">{{ store.playGame.player2.defence }} DEF</span>
+                        </div>
                     </div>
 
+                    <div class="d-flex w-50 justify-content-between">
+                        <div class="px-2 d-flex align-items-center">
+                            <img src="/img/stats/speed.png" alt="attack" class="stats-img" />
+                            <span class="fw-bold fs-5">{{ store.playGame.player2.speed }} SPD</span>
+                        </div>
+
+                        <div class="px-2 d-flex align-items-center">
+                            <img src="/img/stats/brain.png" alt="defence" class="stats-img" />
+                            <span class="fw-bold fs-5">{{ store.playGame.player2.intelligence }} INT</span>
+                        </div>
+                    </div>
+
+                    <div class="px-2 d-flex align-items-center">
+                        <img src="/img/stats/life.png" alt="defence" class="stats-img" />
+                        <span class="fw-bold fs-5">{{ store.playGame.player2.life }} LIFE</span>
+                    </div>
+
+                    <!-- Play Button -->
+                    <div class="mt-4">
+                        <button class="bm-btn">Lancia</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,27 +175,31 @@
 import { store } from "../data/store";
 export default {
     name: 'VersusView',
-    data(){
-        return{
+    data() {
+        return {
             store
         }
     },
     methods: {
         getSelectedItem(items, player) {
-        console.log(store.selectedWeapon[player]);
+            console.log(store.selectedWeapon[player]);
             for (const item of items) {
                 if (item.id === store.selectedWeapon[player]) {
-                console.log(item);
-                return item;
+                    console.log(item);
+                    return item;
                 }
             }
         }
-    }    
+    }
 }
 </script>
 
 <style lang="scss" scoped>
 @use '../assets/partials/var.scss' as *;
+
+ul {
+    list-style-type: none;
+}
 
 h3,
 h4 {
@@ -98,5 +210,34 @@ h4 {
         transform: scale(1.2);
         color: $secondary;
     }
+}
+
+.stats-img {
+    width: 20px;
+    margin-right: 0.5rem;
+    filter: invert(1);
+}
+
+.fight-logs {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: .7rem;
+    height: 100px;
+    overflow: auto;
+
+    .event-log:hover {
+        color: $secondary;
+        cursor: pointer;
+    }
+}
+
+.reset-btn {
+    // position: absolute;
+    // bottom: 0;
+    // margin-bottom: ;
+}
+
+.fs-5:hover {
+    color: $secondary;
+    cursor: pointer;
 }
 </style>
