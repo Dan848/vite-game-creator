@@ -1,18 +1,18 @@
 <template>
-    <div class="mt-5">
-            <div class="container d-flex align-items-center justify-content-between py-4">
-                <div><button class="bm-btn">Gioca</button></div>
-                <div class="footer-social-icon">
-                    <span class="text-center">Follow us</span>
-                    <ul class="social_icon">
-                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <footer class="bg-primary">
+    <div class="container d-flex align-items-center justify-content-between py-4">
+      <div><button class="bm-btn">Gioca</button></div>
+      <div class="footer-social-icon">
+        <span class="text-center">Follow us</span>
+        <ul class="social_icon">
+          <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script>

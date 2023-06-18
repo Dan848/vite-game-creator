@@ -17,8 +17,6 @@
             <CharacterCard v-for="character in store.characters" :key="character.id" :character="character"
                 :imgStartUrl="store.imgStartUrl" />
         </div>
-
-
     </div>
 </template>
 
@@ -58,7 +56,9 @@ export default {
 <style lang="scss" scoped>
 @use '../assets//partials/var.scss' as *;
 
-.pagination {
+.container{
+    margin-bottom: 5rem;
+    .pagination {
     .page-item {
         button {
             background-color: $success;
@@ -66,4 +66,6 @@ export default {
         }
     }
 }
+}
+
 </style>

@@ -1,11 +1,11 @@
 <template>
-    <header>
+    <header class="bg-primary">
         <nav class="navbar fw-semibold container navbar-expand-lg">
             <div class="container-fluid">
                 <!-- {{ --Logo --}} -->
 
                 <a class="navbar-brand " href="/">
-                    <img src="/img/goblin-logo.png" alt="logo" width="40" height="40">
+                    <img src="/img/logo-inverted.png" alt="logo" width="40" height="40">
                 </a>
 
 
@@ -68,7 +68,6 @@ export default {
 
 a {
     text-decoration: none;
-
     &:hover {
         color: $secondary;
     }

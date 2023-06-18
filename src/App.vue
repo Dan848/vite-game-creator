@@ -1,13 +1,9 @@
 <template>
   <HeaderComponent />
-
   <main>
     <router-view></router-view>
   </main>
-
-  <footer>
     <FooterComponent />
-  </footer>
 </template>
 
 <script>

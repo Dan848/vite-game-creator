@@ -2,7 +2,7 @@
   <div class="col-12 col-md-6 col-lg-4 g-4 character-col">
     <div class="p-5">
       <router-link :to="{ name: 'single-character', params: { slug: character.slug } }"
-        class="text-decoration-none text-primary d-flex flex-column">
+        class="text-decoration-none text-white d-flex flex-column">
         <!-- {{ --Character Image-- }} -->
         <div class="character-card-image-box">
           <div class="image-character-card py-4">

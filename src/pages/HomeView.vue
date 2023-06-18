@@ -1,4 +1,5 @@
 <template>
+<section>
   <div class="text-center mt-5">
     <h1 id="home-title" class="pixel-text">Benvenuto su 
       <span class="bugText px-3 rounded-start-3">Bug</span>
@@ -15,6 +16,7 @@
 
   <!-- Have fun section -->
   <HomeSection :section="store.HaveFunSection" />
+</section>
 </template>
 
 <script>
@@ -55,11 +57,12 @@ export default {
 }
 
 section {
-  margin-top: 6rem;
-  padding: 2rem;
+  padding: 6rem 2rem 2rem 2rem;
+  background-color: $primary;
 }
 
 #alliance {
   background-color: #0000000c;
 }
+
 </style>

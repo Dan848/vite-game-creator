@@ -1,10 +1,10 @@
 <template>
     <div class="wave" v-if="section.inverted"></div>
-    <section class="container-fluid" :class="section.inverted ? 'bg-inverted py-5' : 'bm-my-5'">
+    <section class="container-fluid" :class="section.inverted ? 'bg-inverted py-5' : 'bm-py-5'">
         <div class="container">
             <div class="align-items-center" :class="section.inverted ? 'd-flex flex-row-reverse' : 'row'">
                 <!-- Content Col N.1 -->
-                <div class="col">
+                <div class="col d-flex flex-column justify-content-center align-items-center">
                     <!-- Div with title and subtitle -->
                     <div class="section-content">
                         <div class="pixel-text">
@@ -17,13 +17,15 @@
                         </p>
                     </div>
 
-
-                    <router-link v-if="Object.keys(section.routerLink).length" :to="{ name: section.routerLink.href }"
-                        class="text-decoration-none">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <router-link v-if="Object.keys(section.routerLink).length" :to="{ name: section.routerLink.href }"
+                        class="text-decoration-none bm-btn">
                         <button class="bm-btn">
                             {{ section.routerLink.buttonText }}
                         </button>
                     </router-link>
+                    </div>
+
                 </div>
 
                 <!-- Image Col -->
@@ -70,7 +72,7 @@ export default {
     transform: rotate(180deg);
 }
 
-.bm-my-5 {
-    margin: 5rem 0;
+.bm-py-5 {
+    padding: 5rem 0;
 }
 </style>

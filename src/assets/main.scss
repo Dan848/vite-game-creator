@@ -1,15 +1,17 @@
 @use './partials/var' as *;
 
-$fa-font-path: "./webfonts" !default;
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
+$fa-font-path: "./webfonts" !default;
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
 @import "@fortawesome/fontawesome-free/scss/regular";
 @import "@fortawesome/fontawesome-free/scss/solid";
 @import "@fortawesome/fontawesome-free/scss/brands";
 
+//Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
 
 //GENERAL
@@ -20,11 +22,8 @@ $fa-font-path: "./webfonts" !default;
 .pixel-text {
     font-family: 'Silkscreen', cursive;
 }
-body{
-    background-color: $primary;
-}
 
-//CUSTOM BUTTON
+// Custom Button
 .bm-btn {
     font-family: 'Silkscreen', cursive;
     font-size: 1.5rem;
@@ -83,7 +82,7 @@ body{
     height: 110%;
     z-index: -2
 }
-//CUSTOM BUTTON /
+// /Custom Button
 
 
 //CHARACTER START
@@ -114,7 +113,7 @@ body{
 }
 //CHARACTER END
 
-//FORM
+//Form
 .form-floating{
     > label{
         top: -8px;
@@ -150,44 +149,16 @@ header{
     }
 }
 
-//FOOTER
-footer {
-    margin-top: 3.5rem;
+//MAIN
+body {
+    background-image: url("/img/background/dnd-pattern-gray.png");
+    background-size: 800px 400px;
+    background-repeat: repeat;
+    background-blend-mode: multiply;
+    background-color: #ffffff!important;
 }
 
 //Imported CSS
-.breadcrumb {
-    --bs-breadcrumb-padding-x: 0;
-    --bs-breadcrumb-padding-y: 0;
-    --bs-breadcrumb-margin-bottom: 1rem;
-    --bs-breadcrumb-bg: ;
-    --bs-breadcrumb-border-radius: ;
-    --bs-breadcrumb-divider-color: #6c757d;
-    --bs-breadcrumb-item-padding-x: 0.5rem;
-    --bs-breadcrumb-item-active-color: #6c757d;
-    display: flex;
-    flex-wrap: wrap;
-    padding: var(--bs-breadcrumb-padding-y) var(--bs-breadcrumb-padding-x);
-    margin-bottom: var(--bs-breadcrumb-margin-bottom);
-    font-size: var(--bs-breadcrumb-font-size);
-    list-style: none;
-    background-color: var(--bs-breadcrumb-bg);
-    border-radius: var(--bs-breadcrumb-border-radius);
-}
-.breadcrumb-item+.breadcrumb-item {
-    padding-left: var(--bs-breadcrumb-item-padding-x);
-}
-.breadcrumb-item+.breadcrumb-item::before {
-    float: left;
-    padding-right: var(--bs-breadcrumb-item-padding-x);
-    color: var(--bs-breadcrumb-divider-color);
-    content: var(--bs-breadcrumb-divider, "/")
-        /* rtl: var(--bs-breadcrumb-divider, "/") */
-    ;
-}
-.breadcrumb-item.active {
-    color: var(--bs-breadcrumb-item-active-color);
-}
 .fixed-top,
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav,
 .sb-nav-fixed .sb-topnav {
@@ -196,36 +167,4 @@ footer {
     right: 0;
     left: 0;
     z-index: 1030;
-}
-#layoutAuthentication {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-#layoutAuthentication #layoutAuthentication_content {
-    min-width: 0;
-    flex-grow: 1;
-}
-#layoutAuthentication #layoutAuthentication_footer {
-    min-width: 0;
-}
-#layoutSidenav {
-    display: flex;
-}
-#layoutSidenav #layoutSidenav_nav {
-    flex-basis: 225px;
-    flex-shrink: 0;
-    transition: transform 0.15s ease-in-out;
-    z-index: 1038;
-    transform: translateX(-225px);
-}
-#layoutSidenav #layoutSidenav_content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-width: 0;
-    flex-grow: 1;
-    min-height: calc(100vh - 56px);
-    margin-left: -225px;
 }
