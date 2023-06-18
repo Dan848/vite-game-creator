@@ -1,8 +1,5 @@
 <template>
-    <div class="container mt-5">
-
-
-
+    <div v-if="store.playGame.player1" class="container mt-5">
         <div class="row my-5">
             <!-- First character -->
             <div class="col-4">
@@ -25,7 +22,8 @@
 
                     <!-- Character Items -->
                     <div class="character-items">
-                        <h5 v-if="store.selectedWeapon[player1]" class="pixel-text text-center">{{
+
+                        <h5 v-if="store.selectedWeapon.player1" class="pixel-text text-center">{{
                             getSelectedItem(store.playGame.player1.items, "player1").name }}</h5>
                         <h5 class="pixel-text text-center" v-else>Nessun Arma</h5>
                     </div>
@@ -124,7 +122,8 @@
 
                     <!-- List of Character Items -->
                     <div class="character-items">
-                        <h5 v-if="store.selectedWeapon[player2]" class="pixel-text text-center">{{
+
+                        <h5 v-if="store.selectedWeapon.player2" class="pixel-text text-center">{{
                             getSelectedItem(store.playGame.player2.items, "player2").name }}</h5>
                         <h5 class="pixel-text text-center" v-else>Nessun Arma</h5>
                     </div>
@@ -142,6 +141,7 @@
                             <img src="/img/stats/shield.png" alt="defence" class="stats-img" />
                             <span class="fw-bold fs-5">{{ store.playGame.player2.defence }} DEF</span>
                         </div>
+
                     </div>
 
                     <div class="d-flex w-50 justify-content-between">
@@ -168,6 +168,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div v-else>
+        <router-link :to="{ name: 'choose' }" class="bm-btn">Scegli i personaggi</router-link>
     </div>
 </template>
 
@@ -230,11 +234,6 @@ h4 {
     }
 }
 
-.reset-btn {
-    // position: absolute;
-    // bottom: 0;
-    // margin-bottom: ;
-}
 
 .fs-5:hover {
     color: $secondary;
