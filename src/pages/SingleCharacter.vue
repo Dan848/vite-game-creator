@@ -117,6 +117,7 @@ export default {
   
   mounted() {
     this.getCharacter();
+    store.character = null;
   },
 };
 </script>

@@ -25,7 +25,7 @@ export const store = reactive({
       routeName: "contacts",
     },
     {
-      label: "Combatti",
+      label: "Play",
       routeName: "choose",
     },
   ],
@@ -68,7 +68,7 @@ export const store = reactive({
     image: "https://i.gifer.com/WMj.gif",
     inverted: false,
     routerLink: {
-      href: "versus",
+      href: "choose",
       buttonText: "PLAY",
     },
   },
@@ -116,5 +116,10 @@ export const store = reactive({
     player2: null
   },
   selectedWeapon: [],
-
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 });

@@ -1,7 +1,9 @@
 <template>
   <footer class="bg-primary">
     <div class="container d-flex align-items-center justify-content-between py-4">
-      <div><button class="bm-btn">Gioca</button></div>
+      <router-link :to="{name: 'choose'}">
+        <button class="bm-btn">Play</button>
+      </router-link>
       <div class="footer-social-icon">
         <span class="text-center">Follow us</span>
         <ul class="social_icon">
