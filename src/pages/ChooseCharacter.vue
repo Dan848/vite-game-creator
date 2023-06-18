@@ -60,7 +60,7 @@
         </div>
         <div class="row">
             <div class="col text-center">
-                <router-link :to="{name: 'home'}">
+                <router-link :to="{name: 'versus'}">
                     <button class="bm-btn">Play</button>
                 </router-link>
             </div>

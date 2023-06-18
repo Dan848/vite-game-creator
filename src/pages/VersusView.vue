@@ -3,9 +3,9 @@
         <div class="row">
             <!-- First character -->
             <div class="col-4">
-                <h3 class="pixel-text text-center">CharacterName</h3>
+                <h3 class="pixel-text text-center">{{store.playGame.player1.name}}</h3>
                 <div>
-                    <img src="img/type-gif/barbarian.gif" alt="characterOne" class="w-100 h-100">
+                    <img :src="store.imgStartUrl + (store.playGame.player1.image ? store.playGame.player1.image : store.playGame.player1.type.image)" alt="characterOne" class="w-100 h-100">
                 </div>
 
                 <!-- Character Content -->
@@ -15,13 +15,13 @@
                     <div class="character-type">
                         <h4 class="pixel-text text-center">
                             <!-- Here Goes character type -->
-                            Barbarian
+                            {{ store.playGame.player1.type.name }}
                         </h4>
                     </div>
 
-                    <!-- List of Character Items -->
+                    <!-- Character Items -->
                     <div class="character-items">
-                        <h5 class="pixel-text text-center">Items</h5>
+                        <h5 class="pixel-text text-center">{{ getSelectedItem(store.playGame.player1.items, "player1").name }}</h5>
                         <ul>
                             <!-- Here goes li elements that cycle for every item -->
                         </ul>
@@ -40,9 +40,9 @@
 
             <!-- Second character -->
             <div class="col-4">
-                <h3 class="pixel-text text-center">CharacterName</h3>
+                <h3 class="pixel-text text-center">{{store.playGame.player2.name}}</h3>
                 <div>
-                    <img src="img/type-gif/wizard.gif" alt="characterOne" class="w-100 h-100">
+                    <img :src="store.imgStartUrl + (store.playGame.player2.image ? store.playGame.player2.image : store.playGame.player2.type.image)" alt="characterOne" class="w-100 h-100">
                 </div>
 
                 <!-- Character Content -->
@@ -52,16 +52,13 @@
                     <div class="character-type">
                         <h4 class="pixel-text text-center">
                             <!-- Here Goes character type -->
-                            Wizard
+                            {{store.playGame.player2.type.name}}
                         </h4>
                     </div>
 
                     <!-- List of Character Items -->
                     <div class="character-items">
-                        <h5 class="pixel-text text-center">Items</h5>
-                        <ul>
-                            <!-- Here goes li elements that cycle for every item -->
-                        </ul>
+                        <h5 class="pixel-text text-center">{{ getSelectedItem(store.playGame.player2.items, "player2").name }}</h5>                        
                     </div>
 
 
@@ -72,8 +69,25 @@
 </template>
 
 <script>
+import { store } from "../data/store";
 export default {
-    name: 'VersusView'
+    name: 'VersusView',
+    data(){
+        return{
+            store
+        }
+    },
+    methods: {
+        getSelectedItem(items, player) {
+        console.log(store.selectedWeapon[player]);
+            for (const item of items) {
+                if (item.id === store.selectedWeapon[player]) {
+                console.log(item);
+                return item;
+                }
+            }
+        }
+    }    
 }
 </script>
 
