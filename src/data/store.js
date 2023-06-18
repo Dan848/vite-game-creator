@@ -65,7 +65,7 @@ export const store = reactive({
     title: `Ricorda che l'importante è sempre divertirsi!`,
     content: `Adesso vai e divertiti avventuriero!`,
     subtitle: "",
-    image: "https://i.gifer.com/WMj.gif",
+    image: "https://i.gifer.com/4M4z.gif",
     inverted: false,
     routerLink: {
       href: "choose",
