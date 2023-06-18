@@ -36,7 +36,7 @@
             </li>
           </ul>
           <a href="http://localhost:8000">
-            Area Riservata
+            Admin zone
             <i class="fas fa-user fa-fw"></i>
           </a>
         </div>

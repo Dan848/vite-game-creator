@@ -1,37 +1,39 @@
 <template>
-    <!-- Select Player -->
-    <div v-if="!store.playGame.player2" class="container">
-        <h2 v-if="!store.playGame.player1" class="text-white text-center mt-5">
-            Scegli il Giocatore 1
-        </h2>
-        <h2 v-if="store.playGame.player1 && !store.playGame.player2" class="text-white text-center mt-5">
-            Scegli il Giocatore 2
-        </h2>
-        <div class="row mt-5">
-            <!-- Page navigation -->
-            <ul class="pagination d-flex justify-content-end">
-                <li class="page-item"><button :class="{ 'page-link': true, 'disabled': store.currentPage === 1 }"
-                        @click="getCharacter(store.currentPage - 1)"><i class="fa-solid fa-angle-left"></i></button></li>
-                <li class="page-item" v-for="n in store.lastPage"><button
-                        :class="{ 'page-link': true, 'active': store.currentPage === n }" @click="getCharacter(n)">{{ n
-                        }}</button>
-                </li>
+    <div v-if="store.characters">
+        <!-- Select Player -->
+        <div v-if="!store.playGame.player2" class="container">
+            <h2 v-if="!store.playGame.player1" class="text-white text-center mt-5">
+                Scegli il Giocatore 1
+            </h2>
+            <h2 v-if="store.playGame.player1 && !store.playGame.player2" class="text-white text-center mt-5">
+                Scegli il Giocatore 2
+            </h2>
+            <div class="row mt-5">
+                <!-- Page navigation -->
+                <ul class="pagination d-flex justify-content-end">
+                    <li class="page-item"><button :class="{ 'page-link': true, 'disabled': store.currentPage === 1 }"
+                            @click="getCharacter(store.currentPage - 1)"><i class="fa-solid fa-angle-left"></i></button></li>
+                    <li class="page-item" v-for="n in store.lastPage"><button
+                            :class="{ 'page-link': true, 'active': store.currentPage === n }" @click="getCharacter(n)">{{ n
+                            }}</button>
+                    </li>
 
-                <li class="page-item"><button
-                        :class="{ 'page-link': true, 'disabled': store.currentPage === store.lastPage }"
-                        @click="getCharacter(store.currentPage + 1)"><i class="fa-solid fa-angle-right"></i></button></li>
-            </ul>
-            <div  v-for="character in store.characters" class="mb-5 d-flex justify-content-center align-items-center flex-column col-12 col-md-6 col-lg-4 g-5">
-                <div class="charCard" @click.native="getPlayer(character)">
-                <CharacterCard 
-                :key="character.id" 
-                :character="character"
-                :imgStartUrl="store.imgStartUrl"
-                :isSelected="false"/>
+                    <li class="page-item"><button
+                            :class="{ 'page-link': true, 'disabled': store.currentPage === store.lastPage }"
+                            @click="getCharacter(store.currentPage + 1)"><i class="fa-solid fa-angle-right"></i></button></li>
+                </ul>
+                <div  v-for="character in store.characters" class="mb-5 d-flex justify-content-center align-items-center flex-column col-12 col-md-6 col-lg-4 g-5">
+                    <div class="charCard" @click.native="getPlayer(character)">
+                    <CharacterCard 
+                    :key="character.id" 
+                    :character="character"
+                    :imgStartUrl="store.imgStartUrl"
+                    :isSelected="false"/>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    
     <!-- Select Item -->
     <div v-else class="container">
         <h2 class="text-white text-center mt-5">
@@ -67,17 +69,22 @@
 
         </div>
     </div>
-
+    </div>
+    <div v-else>
+        <LoaderComponent />
+    </div>
 </template>
 
 <script>
 import { store } from '../data/store';
 import CharacterCard from '../components/CharacterCard.vue';
+import LoaderComponent from "../components/LoaderComponent.vue";
 import axios from 'axios';
 export default {
     name: 'CharactersList',
     components: {
-        CharacterCard
+        CharacterCard,
+        LoaderComponent
     },
     data() {
         return {
@@ -104,6 +111,7 @@ export default {
                 store.playGame.player1 = id
             }
             console.log(store.playGame.player1, store.playGame.player2)
+            store.scrollToTop();
         },
         getWeapon(){
             console.log(store.selectedWeapon)
@@ -113,7 +121,9 @@ export default {
         this.getCharacter(1);
         store.playGame.player1 = null;
         store.playGame.player2 = null;
+        store.characters = null;
         store.selectedWeapon = [];
+        store.scrollToTop();
     }
 }
 </script>

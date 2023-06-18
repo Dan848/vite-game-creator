@@ -25,7 +25,7 @@ export const store = reactive({
       routeName: "contacts",
     },
     {
-      label: "Combatti",
+      label: "Play",
       routeName: "choose",
     },
   ],
@@ -116,5 +116,10 @@ export const store = reactive({
     player2: null
   },
   selectedWeapon: [],
-
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 });
