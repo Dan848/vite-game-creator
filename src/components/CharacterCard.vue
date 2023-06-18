@@ -53,8 +53,7 @@
             <img src="/img/stats/life.png" alt="life" class="stats-img" />
             <span class="fw-bold fs-5">{{ character.life }} LIFE</span>
           </div>
-        </div>
-      </div>
+
     </div>
   </div>
 
