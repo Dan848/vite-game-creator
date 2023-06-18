@@ -1,8 +1,11 @@
 <template>
   <div>
-    <div id="loading-wrapper">
-      <div id="loading-text">LOADING</div>
-      <div id="loading-content"></div>
+    <div id="loading-wrapper" class="d-flex justify-content-center align-items-center">
+      <div id="loading-text" class="d-flex flex-column align-items-center">
+        <h1 class="text-center">LOADING</h1>
+        <img src="/img/d20icon.png" alt="Icon">
+      </div>
+      
     </div>
   </div>
 </template>
@@ -15,146 +18,31 @@ export default {
 
 <style lang="scss" scoped>
 @use "../assets/partials/var.scss" as *;
-body {
-  background-color: $primary;
-}
 
-#loading-wrapper {
-  position: fixed;
+#loading-wrapper{
+  background-image: url('/public/img/background/dnd-pattern-gray.png');
+  background-size: contain;
   width: 100%;
   height: 100%;
+  position: absolute;
   left: 0;
   top: 0;
-  background-color: $primary;
   z-index: 999;
-}
-
-#loading-text {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  color: #999;
-  width: 100px;
-  height: 30px;
-  margin: -7px 0 0 -45px;
-  text-align: center;
-  font-family: "PT Sans Narrow", sans-serif;
-  font-size: 20px;
-}
-
-#loading-content {
-  display: block;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  width: 170px;
-  height: 170px;
-  margin: -85px 0 0 -85px;
-  border: 3px solid #f00;
-}
-
-#loading-content:after {
-  content: "";
-  position: absolute;
-  border: 3px solid #0f0;
-  left: 15px;
-  right: 15px;
-  top: 15px;
-  bottom: 15px;
-}
-
-#loading-content:before {
-  content: "";
-  position: absolute;
-  border: 3px solid #00f;
-  left: 5px;
-  right: 5px;
-  top: 5px;
-  bottom: 5px;
-}
-
-#loading-content {
-  border: 3px solid transparent;
-  border-top-color: #4d658d;
-  border-bottom-color: #4d658d;
-  border-radius: 50%;
-  -webkit-animation: loader 2s linear infinite;
-  -moz-animation: loader 2s linear infinite;
-  -o-animation: loader 2s linear infinite;
-  animation: loader 2s linear infinite;
-}
-
-#loading-content:before {
-  border: 3px solid transparent;
-  border-top-color: #d4cc6a;
-  border-bottom-color: #d4cc6a;
-  border-radius: 50%;
-  -webkit-animation: loader 3s linear infinite;
-  -moz-animation: loader 2s linear infinite;
-  -o-animation: loader 2s linear infinite;
-  animation: loader 3s linear infinite;
-}
-
-#loading-content:after {
-  border: 3px solid transparent;
-  border-top-color: #84417c;
-  border-bottom-color: #84417c;
-  border-radius: 50%;
-  -webkit-animation: loader 1.5s linear infinite;
-  animation: loader 1.5s linear infinite;
-  -moz-animation: loader 2s linear infinite;
-  -o-animation: loader 2s linear infinite;
-}
-
-@-webkit-keyframes loaders {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
+  #loading-text{
+    img{
+      width: 100px;
+      height: 100px;
+      animation: rotate-infinite 3s linear infinite;
+    }
   }
 }
 
-@keyframes loader {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
+@keyframes rotate-infinite {
+  from {
+    transform: rotate(0deg); /* Angolo di partenza */
   }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
+  to {
+    transform: rotate(360deg); /* Angolo finale */
   }
-}
-
-#content-wrapper {
-  color: #fff;
-  position: fixed;
-  left: 0;
-  top: 20px;
-  width: 100%;
-  height: 100%;
-}
-
-#header {
-  width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  height: 100px;
-  background-color: #666;
-}
-
-#content {
-  width: 800px;
-  height: 1000px;
-  margin: 0 auto;
-  text-align: center;
-  background-color: #888;
 }
 </style>

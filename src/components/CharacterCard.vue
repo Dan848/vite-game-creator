@@ -14,43 +14,45 @@
       <div class="card-name-border card-name-border-gradient w-75 d-flex align-self-center justify-content-center">
         <h4 class="fs-2">{{ character.name }}</h4>
       </div>
+      
+        <!-- {{ --Character Stats-- }} -->
+        <div class="d-flex flex-wrap">
+          <!-- {{ --Left Stats with Strength and Defence-- }} -->
+          <div class="left-stats w-50">
+            <!-- {{ --Strength --}} -->
+            <div class="w-100 text-center">
+              <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
+              <span class="fw-bold fs-5">{{ character.strength }} STR</span>
+            </div>
 
-      <!-- {{ --Character Stats-- }} -->
-      <div class="d-flex flex-wrap">
-        <!-- {{ --Left Stats with Strength and Defence-- }} -->
-        <div class="left-stats w-50">
-          <!-- {{ --Strength --}} -->
-          <div class="w-100 text-center">
-            <img src="/img/strength.png" alt="attack" class="stats-img" />
-            <span class="fw-bold fs-5">{{ character.strength }} STR</span>
+            <!-- {{ --Defence --}} -->
+            <div class="w-100 text-center">
+              <img src="/img/stats/shield.png" alt="defence" class="stats-img" />
+              <span class="fw-bold fs-5">{{ character.defence }} DEF</span>
+            </div>
           </div>
 
-          <!-- {{ --Defence --}} -->
-          <div class="w-100 text-center">
-            <img src="/img/shield.png" alt="defence" class="stats-img" />
-            <span class="fw-bold fs-5">{{ character.defence }} DEF</span>
+          <!-- {{ --Riight stats with Speed and Intelligence-- }} -->
+          <div class="right-stats w-50">
+            <!-- {{ --Speed --}} -->
+            <div class="w-100 text-center">
+              <img src="/img/stats/speed.png" alt="speed" class="stats-img" />
+              <span class="fw-bold fs-5">{{ character.speed }} SPD</span>
+            </div>
+
+            <!-- {{ --Intelligence --}} -->
+            <div class="w-100 text-center">
+              <img src="/img/stats/brain.png" alt="intelligence" class="stats-img" />
+              <span class="fw-bold fs-5">{{ character.intelligence }} INT</span>
+            </div>
           </div>
         </div>
-
-        <!-- {{ --Riight stats with Speed and Intelligence-- }} -->
-        <div class="right-stats w-50">
-          <!-- {{ --Speed --}} -->
-          <div class="w-100 text-center">
-            <img src="/img/speed.png" alt="speed" class="stats-img" />
-            <span class="fw-bold fs-5">{{ character.speed }} SPD</span>
+        
+          <!-- {{ --Central div with life stat-- }} -->
+          <div class="w-100 text-center pt-2">
+            <img src="/img/stats/life.png" alt="life" class="stats-img" />
+            <span class="fw-bold fs-5">{{ character.life }} LIFE</span>
           </div>
-
-          <!-- {{ --Intelligence --}} -->
-          <div class="w-100 text-center">
-            <img src="/img/brain.png" alt="intelligence" class="stats-img" />
-            <span class="fw-bold fs-5">{{ character.intelligence }} INT</span>
-          </div>
-        </div>
-
-        <!-- {{ --Central div with life stat-- }} -->
-        <div class="w-100 text-center pt-2">
-          <img src="/img/life.png" alt="life" class="stats-img" />
-          <span class="fw-bold fs-5">{{ character.life }} LIFE</span>
         </div>
       </div>
     </div>
@@ -122,8 +124,8 @@ export default {
   .card-name-border-gradient {
     border-image-source: linear-gradient(90deg,
         $primary 0%,
-        $secondary 40%,
-        $secondary 60%,
+        white 40%,
+        white 60%,
         $primary 100%);
   }
 

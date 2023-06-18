@@ -5,6 +5,8 @@ import SingleCharacter from '../pages/SingleCharacter.vue'
 import AboutUs from '../pages/AboutUs.vue'
 import ContactsView from '../pages/ContactsView.vue'
 import ChooseCharacter from '../pages/ChooseCharacter.vue'
+import VersusView from '../pages/VersusView.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,7 +40,12 @@ const router = createRouter({
       path: '/choose-character',
       name: 'choose',
       component: ChooseCharacter
-    }
+    },
+    {
+      path: '/play',
+      name: 'versus',
+      component: VersusView
+    },
   ]
 })
 
