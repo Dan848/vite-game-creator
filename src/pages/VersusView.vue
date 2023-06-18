@@ -21,20 +21,15 @@
 
                     <!-- Character Items -->
                     <div class="character-items">
-                        <h5 class="pixel-text text-center">{{ getSelectedItem(store.playGame.player1.items, "player1").name }}</h5>
-                        <ul>
-                            <!-- Here goes li elements that cycle for every item -->
-                        </ul>
+                        <h5 v-if="store.selectedWeapon[player1]" class="pixel-text text-center">{{ getSelectedItem(store.playGame.player1.items, "player1").name }}</h5>
+                        <h5 class="pixel-text text-center" v-else>Nessun Arma</h5>
                     </div>
-
-
                 </div>
-
             </div>
 
-            <!-- Versus image -->
-            <div class="col-4">
-                <img src="https://media3.giphy.com/media/TiJfX5nRSnvshdijyb/giphy.gif?cid=6c09b9528rfwmlhyl622lwh4g81ek7hrpgfsxof2l718oqsr&ep=v1_stickers_related&rid=giphy.gif&ct=ts"
+            <!-- VERSUS IMAGE -->
+            <div class="col-4 d-flex align-items-center">
+                <img class="img-fluid" src="https://media3.giphy.com/media/TiJfX5nRSnvshdijyb/giphy.gif?cid=6c09b9528rfwmlhyl622lwh4g81ek7hrpgfsxof2l718oqsr&ep=v1_stickers_related&rid=giphy.gif&ct=ts"
                     alt="versusImage">
             </div>
 
@@ -58,9 +53,9 @@
 
                     <!-- List of Character Items -->
                     <div class="character-items">
-                        <h5 class="pixel-text text-center">{{ getSelectedItem(store.playGame.player2.items, "player2").name }}</h5>                        
+                        <h5 v-if="store.selectedWeapon[player2]" class="pixel-text text-center">{{ getSelectedItem(store.playGame.player2.items, "player2").name }}</h5>
+                        <h5 class="pixel-text text-center" v-else>Nessun Arma</h5>                        
                     </div>
-
 
                 </div>
             </div>
