@@ -86,8 +86,8 @@ export default {
   .card-name-border-gradient {
     border-image-source: linear-gradient(90deg,
         $primary 0%,
-        $secondary 40%,
-        $secondary 60%,
+        white 40%,
+        white 60%,
         $primary 100%);
   }
 
