@@ -68,7 +68,7 @@ export const store = reactive({
     image: "https://i.gifer.com/WMj.gif",
     inverted: false,
     routerLink: {
-      href: "versus",
+      href: "choose",
       buttonText: "PLAY",
     },
   },
