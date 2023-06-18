@@ -114,5 +114,7 @@ export const store = reactive({
   playGame: {
     player1: null,
     player2: null
-  }
+  },
+  selectedWeapon: [],
+
 });

@@ -14,8 +14,15 @@
                         :class="{ 'page-link': true, 'disabled': store.currentPage === store.lastPage }"
                         @click="getCharacter(store.currentPage + 1)"><i class="fa-solid fa-angle-right"></i></button></li>
             </ul>
-            <CharacterCard v-for="character in store.characters" :key="character.id" :character="character"
-                :imgStartUrl="store.imgStartUrl" />
+            <div v-for="character in store.characters" class="mb-5 d-flex justify-content-center col-12 col-md-6 col-lg-4 g-5">
+                <router-link class="text-decoration-none" :to="{ name: 'single-character', params: { slug: character.slug } }">
+                    <CharacterCard
+                    :key="character.id" :character="character"
+                    :imgStartUrl="store.imgStartUrl"
+                    :isSelected="false" />
+                </router-link>
+            </div>
+
         </div>
     </div>
 </template>
@@ -58,14 +65,20 @@ export default {
 
 .container{
     margin-bottom: 5rem;
-    .pagination {
-    .page-item {
-        button {
-            background-color: $success;
-            color: $primary;
+    .col-12{
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            transform: scale(0.9);
         }
     }
-}
+    .pagination {
+        .page-item {
+            button {
+                background-color: $success;
+                color: $primary;
+            }
+        }
+    }
 }
 
 </style>

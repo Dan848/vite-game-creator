@@ -57,7 +57,7 @@ export default {
 }
 
 section {
-  padding: 6rem 2rem 2rem 2rem;
+  padding: 6rem 0 2rem 0;
   background-color: $primary;
 }
 

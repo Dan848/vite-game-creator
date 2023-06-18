@@ -1,5 +1,6 @@
 <template>
-    <div class="container">
+    <!-- Select Player -->
+    <div v-if="!store.playGame.player2" class="container">
         <h2 v-if="!store.playGame.player1" class="text-white text-center mt-5">
             Scegli il Giocatore 1
         </h2>
@@ -20,22 +21,63 @@
                         :class="{ 'page-link': true, 'disabled': store.currentPage === store.lastPage }"
                         @click="getCharacter(store.currentPage + 1)"><i class="fa-solid fa-angle-right"></i></button></li>
             </ul>
-            <FightCard v-for="character in store.characters" :key="character.id" 
-            :character="character"
-            :imgStartUrl="store.imgStartUrl"
-            @click="getPlayer(character.id)"/>
+            <div  v-for="character in store.characters" class="mb-5 d-flex justify-content-center align-items-center flex-column col-12 col-md-6 col-lg-4 g-5">
+                <div class="charCard" @click.native="getPlayer(character)">
+                <CharacterCard 
+                :key="character.id" 
+                :character="character"
+                :imgStartUrl="store.imgStartUrl"
+                :isSelected="false"/>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- Select Item -->
+    <div v-else class="container">
+        <h2 class="text-white text-center mt-5">
+            Scegli l'arma da utilizzare
+        </h2>
+        <div class="row justify-content-between mt-5">
+            <div v-for="(character, index) in store.playGame" class="mb-5 d-flex justify-content-center align-items-center flex-column col-12 col-md-6 col-lg-4 g-5">
+                <CharacterCard 
+                :key="index" 
+                :character="character"
+                :imgStartUrl="store.imgStartUrl"
+                />
+                <div>
+                    <select v-if="character.items.length !==0" @change="getWeapon()"
+                    class="w-100 form-select" name="items" v-model="store.selectedWeapon[index]">
+                        <option value="">Scegli l'arma</option>
+                        <option v-for="item in character.items" :value="item.id" :key="item.id">
+                            {{ item.name }}
+                        </option>
+                    </select>
+                    <div v-else class="text-center text-white">
+                        Non possiede Armi
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <router-link :to="{name: 'home'}">
+                    <button class="bm-btn">Play</button>
+                </router-link>
+            </div>
+
+        </div>
+    </div>
+
 </template>
 
 <script>
 import { store } from '../data/store';
-import FightCard from '../components/FightCard.vue';
+import CharacterCard from '../components/CharacterCard.vue';
 import axios from 'axios';
 export default {
     name: 'CharactersList',
     components: {
-        FightCard
+        CharacterCard
     },
     data() {
         return {
@@ -62,10 +104,16 @@ export default {
                 store.playGame.player1 = id
             }
             console.log(store.playGame.player1, store.playGame.player2)
+        },
+        getWeapon(){
+            console.log(store.selectedWeapon)
         }
     },
     mounted() {
         this.getCharacter(1);
+        store.playGame.player1 = null;
+        store.playGame.player2 = null;
+        store.selectedWeapon = [];
     }
 }
 </script>
@@ -75,14 +123,22 @@ export default {
 
 .container{
     margin-bottom: 5rem;
-    .pagination {
-    .page-item {
-        button {
-            background-color: $success;
-            color: $primary;
+    .charCard{
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            cursor: pointer;
+            transform: scale(0.9);
         }
     }
-}
+    .pagination {
+        .page-item {
+            button {
+                background-color: $success;
+                color: $primary;
+            }
+        }
+    }   
 }
 
 </style>
