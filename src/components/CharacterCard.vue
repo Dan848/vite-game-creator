@@ -79,7 +79,7 @@ export default {
   // background-size: contain;
   // background-repeat: no-repeat;
   width: 100%;
-  width: 270px;
+  width: 290px;
   height: 450px;
   background-color: $primary;
   position: relative;
