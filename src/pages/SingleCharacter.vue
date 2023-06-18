@@ -1,6 +1,6 @@
 <template>
   <div v-if="store.character">
-    <div class="container">
+    <div class="container mb-5">
       <div class="text-white p-4 mt-5">
         <div class="box-character row">
           <div class="box-image justify-content-center d-flex col-12 col-lg-6">

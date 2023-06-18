@@ -24,6 +24,10 @@ export const store = reactive({
       label: "Contact",
       routeName: "contacts",
     },
+    {
+      label: "Combatti",
+      routeName: "choose",
+    },
   ],
   FightSection: {
     title: "Scegli il tuo personaggio e inizia a combattere!",
@@ -107,4 +111,10 @@ export const store = reactive({
       profile_img: "/img/team/g-lumia.jpg",
     },
   ],
+  playGame: {
+    player1: null,
+    player2: null
+  },
+  selectedWeapon: [],
+
 });

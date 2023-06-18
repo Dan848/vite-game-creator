@@ -156,9 +156,19 @@ body {
     background-repeat: repeat;
     background-blend-mode: multiply;
     background-color: #ffffff!important;
+        //to put footer to the bottom of the page
+        main{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 0;
+        flex-grow: 1;
+        min-height: calc(100vh - 66px - 138px);
+        }
 }
 
 //Imported CSS
+
 .fixed-top,
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav,
 .sb-nav-fixed .sb-topnav {
@@ -167,4 +177,9 @@ body {
     right: 0;
     left: 0;
     z-index: 1030;
+}
+#layoutAuthentication {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
