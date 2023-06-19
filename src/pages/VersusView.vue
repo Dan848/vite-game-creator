@@ -190,7 +190,7 @@
 
   </div>
 
-  <GameWinner v-if="gameOver" :message="'player1 ha vinto'"/>
+  <GameWinner v-if="gameOver" :message="winnerMessage"/>
 </template>
 <script>
 import { store } from "../data/store";
@@ -261,6 +261,9 @@ export default {
           this.logMessage = this.firstPlayer.name + " tira " + this.firstPlayer.selectedWeapon.dice_num + " D" + this.firstPlayer.selectedWeapon.dice_faces + ", esce " +
           dmgBonus + ", " + this.secondPlayer.name + " si difende per " + this.secondPlayer.defence + " e subisce " +  totalDmg + "."
         }
+        else {
+          this.logMessage = this.firstPlayer.name + " non è abbastanza forte. " + this.secondPlayer.name + " non subisce danni."
+        }
       }
       if (player == "player2") {
         totalDmg = dmgBonus + this.secondPlayer.strength - this.firstPlayer.defence;
@@ -270,6 +273,9 @@ export default {
           //Log Message
           this.logMessage = this.secondPlayer.name + " tira " + this.secondPlayer.selectedWeapon.dice_num + " D" + this.secondPlayer.selectedWeapon.dice_faces + ", esce " +
           dmgBonus + ", " + this.firstPlayer.name + " si difende per " + this.firstPlayer.defence + " e subisce " +  totalDmg + "."
+        }
+        else {
+          this.logMessage = this.secondPlayer.name + " non è abbastanza forte. " + this.firstPlayer.name + " non subisce danni."
         }
       }
 
