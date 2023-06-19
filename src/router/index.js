@@ -6,6 +6,7 @@ import AboutUs from '../pages/AboutUs.vue'
 import ContactsView from '../pages/ContactsView.vue'
 import ChooseCharacter from '../pages/ChooseCharacter.vue'
 import VersusView from '../pages/VersusView.vue'
+import NotFound from '../pages/NotFound.vue'
 
 
 const router = createRouter({
@@ -45,6 +46,11 @@ const router = createRouter({
       path: '/play',
       name: 'versus',
       component: VersusView
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: NotFound
     },
   ]
 })
