@@ -1,10 +1,17 @@
 <template>
     <div class="my-modal">
         <div class="card d-flex justify-content-center align-items-center mx-auto mt-5">
-            <h1>{{ message }}</h1>
-            <router-link :to="{name: 'choose'}">
-                <button class="bm-btn">Rigioca</button>
-            </router-link>
+            <h1>{{ message }} <i class="fa-solid fa-crown text-secondary"></i></h1>
+            <hr>
+            <div class="pt-5">
+                <router-link :to="{name: 'choose'}" class="me-3">
+                    <button class="bm-btn">Rigioca</button>
+                </router-link>
+                <router-link :to="{ name: 'home' }">
+                    <button class="bm-btn">Home</button>
+                </router-link>
+            </div>
+           
         </div>
         
     </div>
