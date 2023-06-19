@@ -88,17 +88,14 @@
           <div class="px-2 d-flex align-items-center">
             <img src="/img/stats/life.png" alt="defence" class="stats-img" />
             <span class="fw-bold fs-5"
-              >{{ store.playGame.player1.life }} LIFE</span
+              >{{ firstPlayer.currentHp }} LIFE</span
             >
           </div>
 
           <!-- Play Button -->
           <div class="mt-4">
-            <button
-              class="bm-btn"
-              :class="{ disable: !firstPlayer.bonusDmg }"
-              @click="lunchDice(2, 6, 'player1')"
-            >
+            <button class="bm-btn" :disabled="gameOver || !turnPlayer"
+              @click="lunchDice(firstPlayer.selectedWeapon.dice_num, firstPlayer.selectedWeapon.dice_faces, 'player1')">
               Lancia
             </button>
           </div>
@@ -225,13 +222,16 @@
           <div class="px-2 d-flex align-items-center">
             <img src="/img/stats/life.png" alt="defence" class="stats-img" />
             <span class="fw-bold fs-5"
-              >{{ store.playGame.player2.life }} LIFE</span
+              >{{ secondPlayer.currentHp }} LIFE</span
             >
           </div>
 
           <!-- Play Button -->
           <div class="mt-4">
-            <button class="bm-btn">Lancia</button>
+            <button class="bm-btn" :disabled="gameOver || turnPlayer"
+            @click="lunchDice(secondPlayer.selectedWeapon.dice_num, secondPlayer.selectedWeapon.dice_faces, 'player2')">
+            Lancia
+            </button>
           </div>
         </div>
       </div>
@@ -278,62 +278,89 @@ export default {
       store,
       firstPlayer: { ...store.playGame.player1 },
       secondPlayer: { ...store.playGame.player2 },
+      gameOver: false,
+      turnPlayer: null
     };
   },
   methods: {
     getSelectedItem(items, player) {
       if (player == "player1") {
-        console.log(store.selectedWeapon[player]);
         for (const item of items) {
           if (item.id === store.selectedWeapon[player]) {
             this.firstPlayer.selectedWeapon = item;
-            this.firstPlayer.bonusDmg = null;
             return item;
           }
         }
       } else {
-        console.log(store.selectedWeapon[player]);
         for (const item of items) {
           if (item.id === store.selectedWeapon[player]) {
-            this.secondPlayer.selectedWeapon = item;
-            this.secondPlayer.bonusDmg = null;
+            this.secondPlayer.selectedWeapon = item;;
             return item;
           }
         }
       }
     },
-    fight() {
-      this.firstPlayer.currentHp = this.firstPlayer.life;
-      this.secondPlayer.currentHp = this.secondPlayer.life;
-      if (this.firstPlayer.speed > this.secondPlayer.speed) {
-        this.fighting(this.firstPlayer, this.secondPlayer);
-      } else {
-        this.fighting(this.secondPlayer, this.firstPlayer);
-      }
-    },
-    fighting(fighter1, fighter2) {
-      fighter2.currentHp -= fighter1.strenght + fighter1.bonusDmg;
-      fighter1.currentHp -= fighter2.strenght + fighter2.bonusDmg;
-      fighter1.bonusDmg = null;
-      fighter2.bonusDmg = null;
-    },
+    // Robaccia di Filippo Verrone <3 che adoro
+    // fight() {
+    //   this.firstPlayer.currentHp = this.firstPlayer.life;
+    //   this.secondPlayer.currentHp = this.secondPlayer.life;
+    //   if (this.firstPlayer.speed > this.secondPlayer.speed) {
+    //     this.fighting(this.firstPlayer, this.secondPlayer);
+    //   } else {
+    //     this.fighting(this.secondPlayer, this.firstPlayer);
+    //   }
+    // },
+    // fighting(fighter1, fighter2) {
+    //   fighter2.currentHp -= fighter1.strenght + fighter1.bonusDmg;
+    //   fighter1.currentHp -= fighter2.strenght + fighter2.bonusDmg;
+    //   fighter1.bonusDmg = null;
+    //   fighter2.bonusDmg = null;
+    // },
+
+    //LANCIA DADO
     lunchDice(value, diceType, player) {
-      let dmgBonus = 0;
-      for (let i = value; i > 0; i--) {
-        dmgBonus += this.rndNumb(diceType /* .replace('d', '') */);
-      }
-      if (player == "player1") this.firstPlayer.bonusDmg = dmgBonus;
-      if (player == "player2") this.secondPlayer.bonusDmg = dmgBonus;
-      console.log(this.firstPlayer.bonusDmg);
+        let totalDmg = 0;
+        let dmgBonus = 0;
+        for (let i = value; i > 0; i--) {
+        dmgBonus += this.rndNumb(diceType);
+        }
+        if(player == "player1"){
+
+            totalDmg = dmgBonus + this.firstPlayer.strength - this.secondPlayer.defence;
+            this.secondPlayer.currentHp -= totalDmg;
+        }
+        if(player == "player2"){
+            totalDmg = dmgBonus + this.secondPlayer.strength - this.firstPlayer.defence;
+            this.firstPlayer.currentHp -= totalDmg;
+        }
+
+        if(this.firstPlayer.currentHp <= 0 || this.secondPlayer.currentHp <= 0){
+            this.gameOver = true
+        }
+        this.turnPlayer = !this.turnPlayer
     },
+    //RANDOM
     rndNumb(max) {
       return Math.floor(Math.random() * max + 1);
     },
+    //Init Page
+    initPage(){
+    //Assegna un arma a Zero se non esiste
+    this.firstPlayer.selectedWeapon = {};
+    this.secondPlayer.selectedWeapon = {}
+    this.firstPlayer.selectedWeapon.dice_num = 0;
+    this.firstPlayer.selectedWeapon.dice_faces = 0;
+    this.secondPlayer.selectedWeapon.dice_num = 0;
+    this.secondPlayer.selectedWeapon.dice_faces = 0;
+    //Assegna i Current Hp
+    this.firstPlayer.currentHp = this.firstPlayer.life;
+    this.secondPlayer.currentHp = this.secondPlayer.life;
+    //Decide chi inizia prima
+    this.turnPlayer = (store.playGame.player1.speed > store.playGame.player2.speed) ? true : false;
+    }
   },
   mounted() {
-    setTimeout(() => {
-      console.log(this.firstPlayer);
-    }, 1000);
+    this.initPage();
   },
 };
 </script>
@@ -378,4 +405,9 @@ h4 {
   color: $secondary;
   cursor: pointer;
 }
+
+button[disabled]{
+    color: red;
+}
+
 </style>
