@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
+  <div class="container my-5">
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label"
-        >Email address</label
+        >Indirizzo Email</label
       >
       <input
         type="email"
@@ -13,7 +13,7 @@
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label"
-        >Example textarea</label
+        >Messaggio</label
       >
       <textarea
         class="form-control"
@@ -22,7 +22,7 @@
       ></textarea>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button class="btn bm-btn me-md-2" type="reset">Cancella</button>
+      <button class="btn bm-btn me-md-2" type="reset">reset</button>
       <button class="btn bm-btn" type="submit">Invia</button>
     </div>
   </div>
