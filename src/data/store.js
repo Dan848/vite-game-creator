@@ -74,7 +74,7 @@ export const store = reactive({
       role: "Full stack developper",
       description:
         "Sono un ragazzo pieno di inventiva e con tanto entusiasmo, appassionato di sport e moda",
-      profile_img: "/img/team/",
+      profile_img: "/img/team/dp-vito.jpeg",
     },
     {
       name: "Lucà Giuseppe",
@@ -85,23 +85,24 @@ export const store = reactive({
     {
       name: "Rossi Aniello",
       role: "Junior Full stack developper",
-      description: "Sono un ragazzo a cui piace programmare, risolvendo problemi, ma soprattutto creandone di nuovi",
+      description:
+        "Sono un ragazzo a cui piace programmare, risolvendo problemi, ma soprattutto creandone di nuovi",
       profile_img: "/img/team/n-rossi.jpg",
     },
     {
       name: "Ceravolo Daniele",
-      role: "Full stack developper",
-      description: "mettetevela voi",
-      profile_img: "/img/team/",
+      role: "Project manager",
+      description: "IL PAZZO CHE HA DECISO DI FARLO FUNZIONANTE IL GIOCO",
+      profile_img: "/img/team/d-ceravolo.jpeg",
     },
     {
-      name: "Michele Libralato",
-      role: "Full stack developper",
-      description: "mettetevela voi",
-      profile_img: "/img/team/",
+      name: "Libralato Michele ",
+      role: "Junior RE web Developer",
+      description: " Junior sono nell'anima. So de LATINA.",
+      profile_img: "/img/team/m-librato.png",
     },
     {
-      name: "Giorgio Lumia",
+      name: "Lumia Giorgio ",
       role: "Full Stack Celiaco",
       description: "Mi defisco un uomo pieno di inventiva e di problemi.",
       profile_img: "/img/team/g-lumia.jpg",
@@ -109,13 +110,13 @@ export const store = reactive({
   ],
   playGame: {
     player1: null,
-    player2: null
+    player2: null,
   },
   selectedWeapon: [],
   scrollToTop() {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
-  }
+  },
 });
