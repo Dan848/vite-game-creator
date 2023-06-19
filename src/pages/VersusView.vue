@@ -83,13 +83,9 @@
           <div class="w-100">
             <h2 class="text-center pixel-text">History</h2>
             <div class="fight-logs">
-              <ul>
+              <ul class="list-unstyled">
                 <!-- Fight logs li (cycle them in a fight logs phrase array) -->
-                <li class="event-log">test1</li>
-                <li class="event-log">test1</li>
-                <li class="event-log">test1</li>
-                <li class="event-log">test1</li>
-                <li class="event-log">test1</li>
+                <li class="event-log">{{logMessage}}</li>
               </ul>
             </div>
           </div>
@@ -204,7 +200,9 @@ export default {
       firstPlayer: { ...store.playGame.player1 },
       secondPlayer: { ...store.playGame.player2 },
       gameOver: false,
-      turnPlayer: null
+      turnPlayer: null,
+      logMessage: "",
+      winnerMessage: "",
     };
   },
   methods: {
@@ -250,21 +248,29 @@ export default {
         dmgBonus += this.rndNumb(diceType);
       }
       if (player == "player1") {
-
         totalDmg = dmgBonus + this.firstPlayer.strength - this.secondPlayer.defence;
         if (totalDmg > 0){
         this.secondPlayer.currentHp -= totalDmg;
+          //Log Message
+          this.logMessage = this.firstPlayer.name + " tira " + this.firstPlayer.selectedWeapon.dice_num + " D" + this.firstPlayer.selectedWeapon.dice_faces + ", esce " +
+          dmgBonus + ", " + this.secondPlayer.name + " si difende per " + this.secondPlayer.defence + " e subisce " +  totalDmg + "."
         }
       }
       if (player == "player2") {
         totalDmg = dmgBonus + this.secondPlayer.strength - this.firstPlayer.defence;
         if (totalDmg > 0){
         this.firstPlayer.currentHp -= totalDmg;
+          //Log Message
+          this.logMessage = this.secondPlayer.name + " tira " + this.secondPlayer.selectedWeapon.dice_num + " D" + this.secondPlayer.selectedWeapon.dice_faces + ", esce " +
+          dmgBonus + ", " + this.firstPlayer.name + " si difende per " + this.firstPlayer.defence + " e subisce " +  totalDmg + "."
         }
       }
 
       if (this.firstPlayer.currentHp <= 0 || this.secondPlayer.currentHp <= 0) {
         this.gameOver = true
+        this.firstPlayer.currentHp <= 0 ?
+        this.winnerMessage = this.secondPlayer.name + " hai vinto" :
+        this.winnerMessage = this.firstPlayer.name + " hai vinto"
       }
       this.turnPlayer = !this.turnPlayer
     },
