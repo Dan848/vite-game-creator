@@ -86,7 +86,7 @@ body {
     position: relative;
     width: 100%;
     height: 60px;
-    background-color: $secondary;
+    background: $primary;
 
     &::before,
     &::after {
@@ -253,7 +253,7 @@ body {
   .footer-card {
     position: relative;
     padding: 1rem;
-    background-color: $secondary;
+    background: $secondary;
     text-align: center;
 
     a {
