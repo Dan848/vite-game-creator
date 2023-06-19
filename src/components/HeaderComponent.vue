@@ -9,30 +9,22 @@
         </a>
 
         <!-- {{ --Burger Menù-- }} -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          @click="show = !show"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" @click="show = !show">
           <span class="navbar-toggler-icon"></span>
         </button>
         <!-- {{ --Navbar Start-- }} -->
-        <div
-          class="collapse navbar-collapse w-100"
-          id="navbarNavDropdown"
-          :class="{ show: show }"
-        >
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse w-100" id="navbarNavDropdown" :class="{ show: show }">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
             <!-- {{ --Simple Anchor Link-- }} -->
             <li class="nav-item text-white" v-for="item in store.headerLinks">
               <router-link :to="{ name: item.routeName }" class="mx-2">
                 {{ item.label }}
               </router-link>
+            </li>
+
+            <li>
+              <router-link :to="{ name: 'choose' }" class="bm-btn p-1 text-white">play</router-link>
             </li>
           </ul>
           <a href="http://localhost:8000">
@@ -75,6 +67,7 @@ export default {
 
 a {
   text-decoration: none;
+
   &:hover {
     color: $secondary;
   }

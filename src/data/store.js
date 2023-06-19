@@ -24,10 +24,6 @@ export const store = reactive({
       label: "Contact",
       routeName: "contacts",
     },
-    {
-      label: "Play",
-      routeName: "choose",
-    },
   ],
   FightSection: {
     title: "Scegli il tuo personaggio e inizia a combattere!",
@@ -82,9 +78,9 @@ export const store = reactive({
     },
     {
       name: "Lucà Giuseppe",
-      role: "Full stack developper",
-      description: "mettetevela voi",
-      profile_img: "/img/team/",
+      role: "Mental Coach",
+      description: "Forza Messina",
+      profile_img: "/img/team/g-luca.jpg",
     },
     {
       name: "Rossi Aniello",
