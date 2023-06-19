@@ -34,7 +34,7 @@ export const store = reactive({
 
     inverted: false,
     routerLink: {
-      href: "characters",
+      href: "choose",
       buttonText: "QUI",
     },
   },

@@ -246,6 +246,18 @@ export default {
     //   fighter2.bonusDmg = null;
     // },
 
+    //Crea Log Message
+    createLogMsg(player, enemy, dmgBonus, totalDmg, ){
+      let message = "";
+      if (!player.selectedWeapon.dice_num === 0) {
+      message = player.name + " tira " + player.selectedWeapon.dice_num + " D" + player.selectedWeapon.dice_faces +
+      ", esce " + dmgBonus + ", " + enemy.name + " si difende per " + enemy.defence + " e subisce " +  totalDmg + "."
+      }
+      else {
+        message = player.name + " attacca con " + player.strength + " forza, " + enemy.name + " si difende per " + enemy.defence + " e subisce " +  totalDmg + "."
+      }
+          return message
+    },
     //LANCIA DADO
     lunchDice(value, diceType, player) {
       let totalDmg = 0;
@@ -258,8 +270,7 @@ export default {
         if (totalDmg > 0){
         this.secondPlayer.currentHp -= totalDmg;
           //Log Message
-          this.logMessage = this.firstPlayer.name + " tira " + this.firstPlayer.selectedWeapon.dice_num + " D" + this.firstPlayer.selectedWeapon.dice_faces + ", esce " +
-          dmgBonus + ", " + this.secondPlayer.name + " si difende per " + this.secondPlayer.defence + " e subisce " +  totalDmg + "."
+          this.logMessage = this.createLogMsg(this.firstPlayer, this.secondPlayer, dmgBonus, totalDmg)
         }
         else {
           this.logMessage = this.firstPlayer.name + " non è abbastanza forte. " + this.secondPlayer.name + " non subisce danni."
@@ -271,8 +282,7 @@ export default {
         if (totalDmg > 0){
         this.firstPlayer.currentHp -= totalDmg;
           //Log Message
-          this.logMessage = this.secondPlayer.name + " tira " + this.secondPlayer.selectedWeapon.dice_num + " D" + this.secondPlayer.selectedWeapon.dice_faces + ", esce " +
-          dmgBonus + ", " + this.firstPlayer.name + " si difende per " + this.firstPlayer.defence + " e subisce " +  totalDmg + "."
+          this.logMessage = this.createLogMsg(this.secondPlayer, this.firstPlayer, dmgBonus, totalDmg)
         }
         else {
           this.logMessage = this.secondPlayer.name + " non è abbastanza forte. " + this.firstPlayer.name + " non subisce danni."
