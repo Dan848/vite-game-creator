@@ -252,11 +252,15 @@ export default {
       if (player == "player1") {
 
         totalDmg = dmgBonus + this.firstPlayer.strength - this.secondPlayer.defence;
+        if (totalDmg > 0){
         this.secondPlayer.currentHp -= totalDmg;
+        }
       }
       if (player == "player2") {
         totalDmg = dmgBonus + this.secondPlayer.strength - this.firstPlayer.defence;
+        if (totalDmg > 0){
         this.firstPlayer.currentHp -= totalDmg;
+        }
       }
 
       if (this.firstPlayer.currentHp <= 0 || this.secondPlayer.currentHp <= 0) {
