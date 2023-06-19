@@ -97,8 +97,8 @@ export const store = reactive({
     },
     {
       name: "Libralato Michele ",
-      role: "IL RE",
-      description: "mettetevela voi",
+      role: "Junior RE web Developer",
+      description: " Junior sono nell'anima. So de LATINA.",
       profile_img: "/img/team/m-librato.png",
     },
     {

@@ -6,17 +6,12 @@
         <h3 class="pixel-text text-center">
           {{ store.playGame.player1.name }}
         </h3>
-        <div>
-          <img
-            :src="
-              store.imgStartUrl +
-              (store.playGame.player1.image
-                ? store.playGame.player1.image
-                : store.playGame.player1.type.image)
-            "
-            alt="characterOne"
-            class="w-100 h-100"
-          />
+        <div style="height: 400px;">
+          <img :src="store.imgStartUrl +
+            (store.playGame.player1.image
+              ? store.playGame.player1.image
+              : store.playGame.player1.type.image)
+            " alt="characterOne" class="w-100 h-100" />
         </div>
 
         <!-- Character Content -->
@@ -31,10 +26,7 @@
 
           <!-- Character Items -->
           <div class="character-items">
-            <h5
-              v-if="store.selectedWeapon.player1"
-              class="pixel-text text-center"
-            >
+            <h5 v-if="store.selectedWeapon.player1" class="pixel-text text-center">
               {{
                 getSelectedItem(store.playGame.player1.items, "player1").name
               }}
@@ -45,51 +37,33 @@
 
         <!-- Character Stats and Play Button -->
         <div class="d-flex flex-column align-items-center my-5">
-          <div class="d-flex w-50 justify-content-between">
-            <div class="px-2 d-flex align-items-center">
-              <img
-                src="/img/stats/strength.png"
-                alt="attack"
-                class="stats-img"
-              />
-              <span class="fw-bold fs-5"
-                >{{ store.playGame.player1.strength }} STR</span
-              >
+          <div class="d-flex justify-content-center row w-75">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+              <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
+              <span class="fw-bold fs-5">{{ store.playGame.player1.strength }} STR</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center">
-              <img
-                src="/img/stats/shield.png"
-                alt="defence"
-                class="stats-img"
-              />
-              <span class="fw-bold fs-5"
-                >{{ store.playGame.player1.defence }} DEF</span
-              >
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+              <img src="/img/stats/shield.png" alt="defence" class="stats-img" />
+              <span class="fw-bold fs-5">{{ store.playGame.player1.defence }} DEF</span>
             </div>
           </div>
 
-          <div class="d-flex w-50 justify-content-between">
-            <div class="px-2 d-flex align-items-center">
+          <div class="d-flex w-50 justify-content-between row w-75">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
               <img src="/img/stats/speed.png" alt="attack" class="stats-img" />
-              <span class="fw-bold fs-5"
-                >{{ store.playGame.player1.speed }} SPD</span
-              >
+              <span class="fw-bold fs-5">{{ store.playGame.player1.speed }} SPD</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
               <img src="/img/stats/brain.png" alt="defence" class="stats-img" />
-              <span class="fw-bold fs-5"
-                >{{ store.playGame.player1.intelligence }} INT</span
-              >
+              <span class="fw-bold fs-5">{{ store.playGame.player1.intelligence }} INT</span>
             </div>
           </div>
 
-          <div class="px-2 d-flex align-items-center">
+          <div class="px-2 d-flex align-items-center col-12 justify-content-center">
             <img src="/img/stats/life.png" alt="defence" class="stats-img" />
-            <span class="fw-bold fs-5"
-              >{{ firstPlayer.currentHp }} LIFE</span
-            >
+            <span class="fw-bold fs-5">{{ firstPlayer.currentHp }} LIFE</span>
           </div>
 
           <!-- Play Button -->
@@ -103,9 +77,7 @@
       </div>
 
       <!-- VERSUS IMAGE and logs-->
-      <div
-        class="col-4 d-flex align-items-center flex-column position-relative"
-      >
+      <div class="col-4 d-flex align-items-center flex-column position-relative">
         <!-- Fight logs -->
         <div class="d-flex w-100">
           <div class="w-100">
@@ -124,11 +96,9 @@
         </div>
 
         <div class="mb-5">
-          <img
-            class="img-fluid"
+          <img class="img-fluid"
             src="https://media3.giphy.com/media/TiJfX5nRSnvshdijyb/giphy.gif?cid=6c09b9528rfwmlhyl622lwh4g81ek7hrpgfsxof2l718oqsr&ep=v1_stickers_related&rid=giphy.gif&ct=ts"
-            alt="versusImage"
-          />
+            alt="versusImage" />
         </div>
 
         <div class="reset-btn">
@@ -141,17 +111,12 @@
         <h3 class="pixel-text text-center">
           {{ store.playGame.player2.name }}
         </h3>
-        <div>
-          <img
-            :src="
-              store.imgStartUrl +
-              (store.playGame.player2.image
-                ? store.playGame.player2.image
-                : store.playGame.player2.type.image)
-            "
-            alt="characterOne"
-            class="w-100 h-100"
-          />
+        <div style="height: 400px;">
+          <img :src="store.imgStartUrl +
+            (store.playGame.player2.image
+              ? store.playGame.player2.image
+              : store.playGame.player2.type.image)
+            " alt="characterOne" class="w-100 h-100" />
         </div>
 
         <!-- Character Content -->
@@ -166,10 +131,7 @@
 
           <!-- List of Character Items -->
           <div class="character-items">
-            <h5
-              v-if="store.selectedWeapon.player2"
-              class="pixel-text text-center"
-            >
+            <h5 v-if="store.selectedWeapon.player2" class="pixel-text text-center">
               {{
                 getSelectedItem(store.playGame.player2.items, "player2").name
               }}
@@ -180,57 +142,40 @@
 
         <!-- Character Stats and Play Button -->
         <div class="d-flex flex-column align-items-center my-5">
-          <div class="d-flex w-50 justify-content-between">
-            <div class="px-2 d-flex align-items-center">
-              <img
-                src="/img/stats/strength.png"
-                alt="attack"
-                class="stats-img"
-              />
-              <span class="fw-bold fs-5"
-                >{{ store.playGame.player2.strength }} STR</span
-              >
+          <div class="d-flex w-50 justify-content-between row w-75">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+              <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
+              <span class="fw-bold fs-5">{{ store.playGame.player2.strength }} STR</span>
             </div>
-            <div class="px-2 d-flex align-items-center">
-              <img
-                src="/img/stats/shield.png"
-                alt="defence"
-                class="stats-img"
-              />
-              <span class="fw-bold fs-5"
-                >{{ store.playGame.player2.defence }} DEF</span
-              >
+
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+              <img src="/img/stats/shield.png" alt="defence" class="stats-img" />
+              <span class="fw-bold fs-5">{{ store.playGame.player2.defence }} DEF</span>
             </div>
           </div>
 
-          <div class="d-flex w-50 justify-content-between">
-            <div class="px-2 d-flex align-items-center">
+          <div class="d-flex w-50 justify-content-between row w-75">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
               <img src="/img/stats/speed.png" alt="attack" class="stats-img" />
-              <span class="fw-bold fs-5"
-                >{{ store.playGame.player2.speed }} SPD</span
-              >
+              <span class="fw-bold fs-5">{{ store.playGame.player2.speed }} SPD</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
               <img src="/img/stats/brain.png" alt="defence" class="stats-img" />
-              <span class="fw-bold fs-5"
-                >{{ store.playGame.player2.intelligence }} INT</span
-              >
+              <span class="fw-bold fs-5">{{ store.playGame.player2.intelligence }} INT</span>
             </div>
           </div>
 
-          <div class="px-2 d-flex align-items-center">
+          <div class="px-2 d-flex align-items-center col-12 justify-content-center">
             <img src="/img/stats/life.png" alt="defence" class="stats-img" />
-            <span class="fw-bold fs-5"
-              >{{ secondPlayer.currentHp }} LIFE</span
-            >
+            <span class="fw-bold fs-5">{{ secondPlayer.currentHp }} LIFE</span>
           </div>
 
           <!-- Play Button -->
           <div class="mt-4">
             <button class="bm-btn" :disabled="gameOver || turnPlayer"
-            @click="lunchDice(secondPlayer.selectedWeapon.dice_num, secondPlayer.selectedWeapon.dice_faces, 'player2')">
-            Lancia
+              @click="lunchDice(secondPlayer.selectedWeapon.dice_num, secondPlayer.selectedWeapon.dice_faces, 'player2')">
+              Lancia
             </button>
           </div>
         </div>
@@ -239,36 +184,9 @@
   </div>
 
   <div v-else>
-    <router-link :to="{ name: 'choose' }" class="bm-btn"
-      >Scegli i personaggi</router-link
-    >
+    <router-link :to="{ name: 'choose' }" class="bm-btn">Scegli i personaggi</router-link>
   </div>
 </template>
-<!--      
-      <div class="buttons d-flex justify-content-between">
-        <button
-          v-if="!firstPlayer.bonusDmg"
-          @click="lunchDice(2, 6, 'player1')"
-          class="btn btn-warning"
-        >
-          Genera dadi a giocatore 1
-        </button>
-        <span v-if="firstPlayer.bonusDmg">{{ firstPlayer.bonusDmg }}</span>
-        <button
-          v-if="!secondPlayer.bonusDmg"
-          @click="lunchDice(1, 10, 'player2')"
-          class="btn btn-warning"
-        >
-          Genera dadi a giocatore 2
-        </button>
-        <button
-          v-if="firstPlayer.bonusDmg && secondPlayer.bonusDmg"
-          @click="fight()"
-          class="btn btn-warning"
-        >
-          fight
-        </button>
-      </div> -->
 <script>
 import { store } from "../data/store";
 export default {
@@ -319,44 +237,44 @@ export default {
 
     //LANCIA DADO
     lunchDice(value, diceType, player) {
-        let totalDmg = 0;
-        let dmgBonus = 0;
-        for (let i = value; i > 0; i--) {
+      let totalDmg = 0;
+      let dmgBonus = 0;
+      for (let i = value; i > 0; i--) {
         dmgBonus += this.rndNumb(diceType);
-        }
-        if(player == "player1"){
+      }
+      if (player == "player1") {
 
-            totalDmg = dmgBonus + this.firstPlayer.strength - this.secondPlayer.defence;
-            this.secondPlayer.currentHp -= totalDmg;
-        }
-        if(player == "player2"){
-            totalDmg = dmgBonus + this.secondPlayer.strength - this.firstPlayer.defence;
-            this.firstPlayer.currentHp -= totalDmg;
-        }
+        totalDmg = dmgBonus + this.firstPlayer.strength - this.secondPlayer.defence;
+        this.secondPlayer.currentHp -= totalDmg;
+      }
+      if (player == "player2") {
+        totalDmg = dmgBonus + this.secondPlayer.strength - this.firstPlayer.defence;
+        this.firstPlayer.currentHp -= totalDmg;
+      }
 
-        if(this.firstPlayer.currentHp <= 0 || this.secondPlayer.currentHp <= 0){
-            this.gameOver = true
-        }
-        this.turnPlayer = !this.turnPlayer
+      if (this.firstPlayer.currentHp <= 0 || this.secondPlayer.currentHp <= 0) {
+        this.gameOver = true
+      }
+      this.turnPlayer = !this.turnPlayer
     },
     //RANDOM
     rndNumb(max) {
       return Math.floor(Math.random() * max + 1);
     },
     //Init Page
-    initPage(){
-    //Assegna un arma a Zero se non esiste
-    this.firstPlayer.selectedWeapon = {};
-    this.secondPlayer.selectedWeapon = {}
-    this.firstPlayer.selectedWeapon.dice_num = 0;
-    this.firstPlayer.selectedWeapon.dice_faces = 0;
-    this.secondPlayer.selectedWeapon.dice_num = 0;
-    this.secondPlayer.selectedWeapon.dice_faces = 0;
-    //Assegna i Current Hp
-    this.firstPlayer.currentHp = this.firstPlayer.life;
-    this.secondPlayer.currentHp = this.secondPlayer.life;
-    //Decide chi inizia prima
-    this.turnPlayer = (store.playGame.player1.speed > store.playGame.player2.speed) ? true : false;
+    initPage() {
+      //Assegna un arma a Zero se non esiste
+      this.firstPlayer.selectedWeapon = {};
+      this.secondPlayer.selectedWeapon = {}
+      this.firstPlayer.selectedWeapon.dice_num = 0;
+      this.firstPlayer.selectedWeapon.dice_faces = 0;
+      this.secondPlayer.selectedWeapon.dice_num = 0;
+      this.secondPlayer.selectedWeapon.dice_faces = 0;
+      //Assegna i Current Hp
+      this.firstPlayer.currentHp = this.firstPlayer.life;
+      this.secondPlayer.currentHp = this.secondPlayer.life;
+      //Decide chi inizia prima
+      this.turnPlayer = (store.playGame.player1.speed > store.playGame.player2.speed) ? true : false;
     }
   },
   mounted() {
@@ -406,8 +324,7 @@ h4 {
   cursor: pointer;
 }
 
-button[disabled]{
-    color: red;
+button[disabled] {
+  color: red;
 }
-
 </style>

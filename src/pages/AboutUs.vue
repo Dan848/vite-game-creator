@@ -3,7 +3,16 @@
     <h2 class="text-center mt-2 pixel-text text-secondary">Conosci meglio il nostro Team!</h2>
     <div class="row align-items-stretch">
       <AboutUsCard v-for="team in store.Teams" :key="team.id" :team="team" />
+      
     </div>
+    <div class="position-relative text-secondary my-5 mx-auto guest">
+        <h3>Guest star</h3>
+        <div class="guest-star">
+          <img src="/img/team/guest/verrone.jpeg" alt="Filippo Verrone">
+        </div>
+        <h4>Filippo Verrone</h4>
+        <h5>Thanks from the whole team!</h5>
+      </div>
   </div>
 </template>
 
@@ -24,4 +33,35 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.guest{
+  width: 350px;
+  .guest-star {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      margin-left: -50px;
+      z-index: 5;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #ccc;
+      border: 3px solid #fff;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: auto;
+      }
+  }
+}
+
+</style>
