@@ -6,12 +6,16 @@
       
     </div>
     <div class="position-relative text-secondary my-5 mx-auto guest">
+      <div class="card p-3">
         <h3>Guest star</h3>
         <div class="guest-star">
           <img src="/img/team/guest/verrone.jpeg" alt="Filippo Verrone">
         </div>
         <h4>Filippo Verrone</h4>
+        <br>
         <h5>Thanks from the whole team!</h5>
+      </div>
+        
       </div>
   </div>
 </template>
@@ -34,13 +38,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/partials/var.scss' as *;
 .guest{
   width: 350px;
+  .card{
+    background-color: white;
+    color: $primary;
+  }
   .guest-star {
       position: absolute;
-      left: 100%;
-      top: 0;
-      margin-left: -50px;
+      right: 0;
+      top: 0;      margin-left: -50px;
       z-index: 5;
       width: 100px;
       height: 100px;

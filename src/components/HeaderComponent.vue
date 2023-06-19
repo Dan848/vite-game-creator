@@ -14,23 +14,19 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <!-- {{ --Navbar Start-- }} -->
-        <div class="collapse navbar-collapse w-100" id="navbarNavDropdown" :class="{ show: show }">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
+        <div class="collapse navbar-collapse w-100 justify-content-between" id="navbarNavDropdown" :class="{ show: show }">
+          <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
             <!-- {{ --Simple Anchor Link-- }} -->
             <li class="nav-item text-white" v-for="item in store.headerLinks">
               <router-link :to="{ name: item.routeName }" class="mx-2">
                 {{ item.label }}
               </router-link>
             </li>
-
-            <li>
-              <router-link :to="{ name: 'choose' }" class="bm-btn p-1 text-white">play</router-link>
-            </li>
           </ul>
-          <a href="http://localhost:8000">
-            Admin zone
-            <i class="fas fa-user fa-fw"></i>
-          </a>
+          <div class="text-center">
+            <router-link :to="{ name: 'choose' }" class=" text-white"><button class="bm-btn">play</button></router-link>
+          </div>
+
         </div>
       </div>
     </nav>

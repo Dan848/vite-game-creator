@@ -184,7 +184,14 @@
   </div>
 
   <div v-else>
-    <router-link :to="{ name: 'choose' }" class="bm-btn">Scegli i personaggi</router-link>
+    <div class="container mt-5 w-100 d-flex flex-column justify-content-between align-items-center text-center">
+      <h1 class="mb-3">Oops, c'è qualche bug qui</h1>
+      <h3 class="mb-5">Non hai scelto i personaggi, torna alla selezione</h3>
+      <router-link :to="{ name: 'choose' }" class="bm-btn">
+        <button class="bm-btn">Scegli</button>
+      </router-link>
+    </div>
+
   </div>
 </template>
 <script>

@@ -71,9 +71,8 @@ export const store = reactive({
   Teams: [
     {
       name: "De Palma Vito",
-      role: "Full stack developper",
-      description:
-        "Sono un ragazzo pieno di inventiva e con tanto entusiasmo, appassionato di sport e moda",
+      role: "Junior Full stack developper",
+      description: "Che ve posso dire, al massimo vi posso cantare una canzone",
       profile_img: "/img/team/dp-vito.jpeg",
     },
     {
