@@ -2,9 +2,9 @@
   <footer class="bg-primary">
     <div class="container d-flex align-items-center justify-content-between py-4">
 
-      <router-link :to="{name: 'choose'}">
-        <button class="bm-btn">Play</button>
-      </router-link>
+      <a class="text-white text-decoration-none" href="http://localhost:8000">
+        <i class="fas fa-user fa-fw"></i>
+      </a>
 
       <div class="footer-social-icon">
         <span class="text-center">Follow us</span>
