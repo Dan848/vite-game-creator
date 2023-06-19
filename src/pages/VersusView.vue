@@ -1,17 +1,17 @@
 <template>
   <div v-if="store.playGame.player1" class="container mt-5">
-    <div class="row my-5">
+    <div class="versus-row row my-5 align-content-center flex-column flex-md-row">
       <!-- First character -->
-      <div class="col-4">
+      <div class="col-12 col-md-4 d-flex align-items-sm-center flex-column">
         <h3 class="pixel-text text-center">
           {{ store.playGame.player1.name }}
         </h3>
-        <div style="height: 400px;">
+        <div class="player-img-box">
           <img :src="store.imgStartUrl +
             (store.playGame.player1.image
               ? store.playGame.player1.image
               : store.playGame.player1.type.image)
-            " alt="characterOne" class="w-100 h-100" />
+            " alt="characterOne" class="img-fluid" />
         </div>
 
         <!-- Character Content -->
@@ -38,7 +38,7 @@
         <!-- Character Stats and Play Button -->
         <div class="d-flex flex-column align-items-center my-5">
           <div class="d-flex justify-content-center row w-75">
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12   col-lg-6">
               <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
               <span class="fw-bold fs-5">{{ store.playGame.player1.strength }} STR</span>
             </div>
@@ -77,7 +77,7 @@
       </div>
 
       <!-- VERSUS IMAGE and logs-->
-      <div class="col-4 d-flex align-items-center flex-column position-relative">
+      <div class="col-12 col-lg-4 d-flex align-items-center flex-column position-relative">
         <!-- Fight logs -->
         <div class="d-flex w-100">
           <div class="w-100">
@@ -107,16 +107,16 @@
       </div>
 
       <!-- Second character -->
-      <div class="col-4">
+      <div class="col-12 col-lg-4 d-flex align-items-center flex-column">
         <h3 class="pixel-text text-center">
           {{ store.playGame.player2.name }}
         </h3>
-        <div style="height: 400px;">
+        <div class="player-img-box">
           <img :src="store.imgStartUrl +
             (store.playGame.player2.image
               ? store.playGame.player2.image
               : store.playGame.player2.type.image)
-            " alt="characterOne" class="w-100 h-100" />
+            " alt="characterOne" class="img-fluid" />
         </div>
 
         <!-- Character Content -->
@@ -185,8 +185,8 @@
 
   <div v-else>
     <div class="container mt-5 w-100 d-flex flex-column justify-content-between align-items-center text-center">
-      <h1 class="mb-3">Oops, c'è qualche bug qui</h1>
-      <h3 class="mb-5">Non hai scelto i personaggi, torna alla selezione</h3>
+      <div class="h1 mb-3">Oops, c'è qualche bug qui</div>
+      <div class="mb-5 h3">Non hai scelto i personaggi, torna alla selezione</div>
       <router-link :to="{ name: 'choose' }" class="bm-btn">
         <button class="bm-btn">Scegli</button>
       </router-link>
@@ -252,11 +252,15 @@ export default {
       if (player == "player1") {
 
         totalDmg = dmgBonus + this.firstPlayer.strength - this.secondPlayer.defence;
+        if (totalDmg > 0){
         this.secondPlayer.currentHp -= totalDmg;
+        }
       }
       if (player == "player2") {
         totalDmg = dmgBonus + this.secondPlayer.strength - this.firstPlayer.defence;
+        if (totalDmg > 0){
         this.firstPlayer.currentHp -= totalDmg;
+        }
       }
 
       if (this.firstPlayer.currentHp <= 0 || this.secondPlayer.currentHp <= 0) {
@@ -333,5 +337,40 @@ h4 {
 
 button[disabled] {
   color: red;
+}
+
+.player-img-box {
+  height: 400px;
+}
+
+@media screen and (max-width:991px) and (min-width:768px) {
+  .versus-row {
+    justify-content: center;
+
+    .col-12 {
+      width: 100%;
+    }
+  }
+
+  .player-img-box {
+    height: 200px;
+
+    img {
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+
+  .player-img-box {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+
+    img {
+      height: 100%;
+    }
+  }
 }
 </style>
