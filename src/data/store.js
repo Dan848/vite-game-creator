@@ -71,9 +71,8 @@ export const store = reactive({
   Teams: [
     {
       name: "De Palma Vito",
-      role: "Full stack developper",
-      description:
-        "Sono un ragazzo pieno di inventiva e con tanto entusiasmo, appassionato di sport e moda",
+      role: "Junior Full stack developper",
+      description: "Che ve posso dire, al massimo vi posso cantare una canzone",
       profile_img: "/img/team/dp-vito.jpeg",
     },
     {
@@ -98,13 +97,13 @@ export const store = reactive({
     {
       name: "Libralato Michele ",
       role: "Junior RE web Developer",
-      description: " Junior sono nell'anima. So de LATINA.",
+      description: " Junior solo nell'anima. So de LATINA.",
       profile_img: "/img/team/m-librato.png",
     },
     {
       name: "Lumia Giorgio ",
       role: "Full Stack Celiaco",
-      description: "Mi defisco un uomo pieno di inventiva e di problemi.",
+      description: "Mi definisco un uomo pieno di inventiva e di problemi.",
       profile_img: "/img/team/g-lumia.jpg",
     },
   ],
