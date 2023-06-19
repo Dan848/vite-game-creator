@@ -2,9 +2,9 @@
     <div class="wave" v-if="section.inverted"></div>
     <section class="container-fluid" :class="section.inverted ? 'bg-inverted py-5' : 'bm-py-5'">
         <div class="container">
-            <div class="align-items-center" :class="section.inverted ? 'd-flex flex-row-reverse' : 'row'">
+            <div class="align-items-center flex-wrap" :class="section.inverted ? 'd-flex flex-row-reverse' : 'row'">
                 <!-- Content Col N.1 -->
-                <div class="col d-flex flex-column justify-content-center align-items-center">
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
                     <!-- Div with title and subtitle -->
                     <div class="section-content">
                         <div class="pixel-text">
@@ -19,17 +19,17 @@
 
                     <div class="d-flex justify-content-center align-items-center">
                         <router-link v-if="Object.keys(section.routerLink).length" :to="{ name: section.routerLink.href }"
-                        class="text-decoration-none bm-btn">
-                        <button class="bm-btn">
-                            {{ section.routerLink.buttonText }}
-                        </button>
-                    </router-link>
+                            class="text-decoration-none bm-btn">
+                            <button class="bm-btn">
+                                {{ section.routerLink.buttonText }}
+                            </button>
+                        </router-link>
                     </div>
 
                 </div>
 
                 <!-- Image Col -->
-                <div class="col-6 sectionImg-box" :class="section.inverted ? 'me-5' : 'ms-5'">
+                <div class="col-12 col-md-6 sectionImg-box" :class="section.inverted ? 'pe-5' : 'ps-5'">
                     <img :src="section.image" :alt="section.title" class="img-fluid w-100">
                 </div>
             </div>
@@ -47,10 +47,12 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/partials/var.scss' as *;
+
 .bg-inverted {
     background-color: #c0c0c0;
     color: $primary;
-    .section-content:hover{
+
+    .section-content:hover {
         color: $primary;
     }
 }

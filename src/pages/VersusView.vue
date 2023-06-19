@@ -6,12 +6,12 @@
         <h3 class="pixel-text text-center">
           {{ store.playGame.player1.name }}
         </h3>
-        <div style="height: 400px;">
+        <div class="player-img-box">
           <img :src="store.imgStartUrl +
             (store.playGame.player1.image
               ? store.playGame.player1.image
               : store.playGame.player1.type.image)
-            " alt="characterOne" class="w-100 h-100" />
+            " alt="characterOne" class="img-fluid" />
         </div>
 
         <!-- Character Content -->
@@ -36,28 +36,28 @@
         </div>
 
         <!-- Character Stats and Play Button -->
-        <div class="d-flex flex-column align-items-center my-5">
+        <div class="d-flex flex-column align-items-center my-5 w-100">
           <div class="d-flex justify-content-center row w-75">
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player1.strength }} STR</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player1.strength }} STR</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/shield.png" alt="defence" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player1.defence }} DEF</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player1.defence }} DEF</span>
             </div>
           </div>
 
           <div class="d-flex w-50 justify-content-between row w-75">
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/speed.png" alt="attack" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player1.speed }} SPD</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player1.speed }} SPD</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/brain.png" alt="defence" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player1.intelligence }} INT</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player1.intelligence }} INT</span>
             </div>
           </div>
 
@@ -77,7 +77,7 @@
       </div>
 
       <!-- VERSUS IMAGE and logs-->
-      <div class="col-12 col-lg-4 d-flex align-items-center flex-column position-relative">
+      <div class="col-12 col-lg-4 d-flex align-items-center flex-column position-relative mb-5">
         <!-- Fight logs -->
         <div class="d-flex w-100">
           <div class="w-100">
@@ -107,12 +107,12 @@
         <h3 class="pixel-text text-center">
           {{ store.playGame.player2.name }}
         </h3>
-        <div style="height: 400px;">
+        <div class="player-img-box">
           <img :src="store.imgStartUrl +
             (store.playGame.player2.image
               ? store.playGame.player2.image
               : store.playGame.player2.type.image)
-            " alt="characterOne" class="w-100 h-100" />
+            " alt="characterOne" class="img-fluid" />
         </div>
 
         <!-- Character Content -->
@@ -137,28 +137,28 @@
         </div>
 
         <!-- Character Stats and Play Button -->
-        <div class="d-flex flex-column align-items-center my-5">
+        <div class="d-flex flex-column align-items-center my-5 w-100">
           <div class="d-flex w-50 justify-content-between row w-75">
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player2.strength }} STR</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player2.strength }} STR</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/shield.png" alt="defence" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player2.defence }} DEF</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player2.defence }} DEF</span>
             </div>
           </div>
 
           <div class="d-flex w-50 justify-content-between row w-75">
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/speed.png" alt="attack" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player2.speed }} SPD</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player2.speed }} SPD</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/brain.png" alt="defence" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player2.intelligence }} INT</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player2.intelligence }} INT</span>
             </div>
           </div>
 
@@ -189,9 +189,12 @@
     </div>
 
   </div>
+
+  <GameWinner v-if="gameOver" :message="'player1 ha vinto'"/>
 </template>
 <script>
 import { store } from "../data/store";
+import GameWinner from "../components/GameWinner.vue";
 export default {
   name: "VersusView",
   data() {
@@ -204,6 +207,9 @@ export default {
       logMessage: "",
       winnerMessage: "",
     };
+  },
+  components: {
+    GameWinner
   },
   methods: {
     getSelectedItem(items, player) {
@@ -258,6 +264,7 @@ export default {
       }
       if (player == "player2") {
         totalDmg = dmgBonus + this.secondPlayer.strength - this.firstPlayer.defence;
+
         if (totalDmg > 0){
         this.firstPlayer.currentHp -= totalDmg;
           //Log Message
@@ -342,7 +349,30 @@ h4 {
 }
 
 button[disabled] {
-  color: red;
+  background-color: #c0c0c080;
+  color: $dark;
+  cursor: default;
+  box-shadow:
+    // up and right color shadow
+    inset 0px 0px 0px 0px #c0c0c080,
+    // bottom color shadow
+    inset 0px 0px 0px 0px #c0c0c080,
+    // left color shadow
+    inset 0px 0px 0px 0px #c0c0c080;
+
+  &:hover {
+    box-shadow:
+      // up and right color shadow
+      inset 0px 0px 0px 0px #c0c0c080,
+      // bottom color shadow
+      inset 0px 0px 0px 0px #c0c0c080,
+      // left color shadow
+      inset 0px 0px 0px 0px #c0c0c080;
+  }
+}
+
+.player-img-box {
+  height: 400px;
 }
 
 @media screen and (max-width:991px) and (min-width:768px) {
@@ -351,6 +381,27 @@ button[disabled] {
 
     .col-12 {
       width: 100%;
+    }
+  }
+
+  .player-img-box {
+    height: 200px;
+
+    img {
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+
+  .player-img-box {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+
+    img {
+      height: 100%;
     }
   }
 }

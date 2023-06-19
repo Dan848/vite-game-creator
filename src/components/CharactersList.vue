@@ -1,5 +1,7 @@
 <template>
     <div class="container">
+        <h2 class="text-center my-5 pixel-text text-secondary">Lista dei personaggi</h2>
+
         <div class="row mt-5">
             <!-- Page navigation -->
             <ul class="pagination d-flex justify-content-end">
@@ -14,12 +16,12 @@
                         :class="{ 'page-link': true, 'disabled': store.currentPage === store.lastPage }"
                         @click="getCharacter(store.currentPage + 1)"><i class="fa-solid fa-angle-right"></i></button></li>
             </ul>
-            <div v-for="character in store.characters" class="mb-5 d-flex justify-content-center col-12 col-md-6 col-lg-4 g-5">
-                <router-link class="text-decoration-none" :to="{ name: 'single-character', params: { slug: character.slug } }">
-                    <CharacterCard
-                    :key="character.id" :character="character"
-                    :imgStartUrl="store.imgStartUrl"
-                    :isSelected="false" />
+            <div v-for="character in store.characters"
+                class="mb-5 d-flex justify-content-center col-12 col-md-6 col-lg-4 g-5">
+                <router-link class="text-decoration-none"
+                    :to="{ name: 'single-character', params: { slug: character.slug } }">
+                    <CharacterCard :key="character.id" :character="character" :imgStartUrl="store.imgStartUrl"
+                        :isSelected="false" />
                 </router-link>
             </div>
 
@@ -63,14 +65,17 @@ export default {
 <style lang="scss" scoped>
 @use '../assets//partials/var.scss' as *;
 
-.container{
+.container {
     margin-bottom: 5rem;
-    .col-12{
+
+    .col-12 {
         transition: all 0.3s ease-in-out;
-        &:hover{
+
+        &:hover {
             transform: scale(0.9);
         }
     }
+
     .pagination {
         .page-item {
             button {
@@ -80,5 +85,4 @@ export default {
         }
     }
 }
-
 </style>
