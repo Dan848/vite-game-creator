@@ -36,28 +36,28 @@
         </div>
 
         <!-- Character Stats and Play Button -->
-        <div class="d-flex flex-column align-items-center my-5">
+        <div class="d-flex flex-column align-items-center my-5 w-100">
           <div class="d-flex justify-content-center row w-75">
-            <div class="px-2 d-flex align-items-center justify-content-center col-12   col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player1.strength }} STR</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player1.strength }} STR</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/shield.png" alt="defence" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player1.defence }} DEF</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player1.defence }} DEF</span>
             </div>
           </div>
 
           <div class="d-flex w-50 justify-content-between row w-75">
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/speed.png" alt="attack" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player1.speed }} SPD</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player1.speed }} SPD</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/brain.png" alt="defence" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player1.intelligence }} INT</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player1.intelligence }} INT</span>
             </div>
           </div>
 
@@ -77,7 +77,7 @@
       </div>
 
       <!-- VERSUS IMAGE and logs-->
-      <div class="col-12 col-lg-4 d-flex align-items-center flex-column position-relative">
+      <div class="col-12 col-lg-4 d-flex align-items-center flex-column position-relative mb-5">
         <!-- Fight logs -->
         <div class="d-flex w-100">
           <div class="w-100">
@@ -141,28 +141,28 @@
         </div>
 
         <!-- Character Stats and Play Button -->
-        <div class="d-flex flex-column align-items-center my-5">
+        <div class="d-flex flex-column align-items-center my-5 w-100">
           <div class="d-flex w-50 justify-content-between row w-75">
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player2.strength }} STR</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player2.strength }} STR</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/shield.png" alt="defence" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player2.defence }} DEF</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player2.defence }} DEF</span>
             </div>
           </div>
 
           <div class="d-flex w-50 justify-content-between row w-75">
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/speed.png" alt="attack" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player2.speed }} SPD</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player2.speed }} SPD</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-6">
               <img src="/img/stats/brain.png" alt="defence" class="stats-img" />
-              <span class="fw-bold fs-5">{{ store.playGame.player2.intelligence }} INT</span>
+              <span class="fw-bold fs-5 text-nowrap">{{ store.playGame.player2.intelligence }} INT</span>
             </div>
           </div>
 
@@ -252,14 +252,14 @@ export default {
       if (player == "player1") {
 
         totalDmg = dmgBonus + this.firstPlayer.strength - this.secondPlayer.defence;
-        if (totalDmg > 0){
-        this.secondPlayer.currentHp -= totalDmg;
+        if (totalDmg > 0) {
+          this.secondPlayer.currentHp -= totalDmg;
         }
       }
       if (player == "player2") {
         totalDmg = dmgBonus + this.secondPlayer.strength - this.firstPlayer.defence;
-        if (totalDmg > 0){
-        this.firstPlayer.currentHp -= totalDmg;
+        if (totalDmg > 0) {
+          this.firstPlayer.currentHp -= totalDmg;
         }
       }
 
