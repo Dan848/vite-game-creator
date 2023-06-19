@@ -25,7 +25,7 @@ export const store = reactive({
       routeName: "contacts",
     },
     {
-      label: "Combatti",
+      label: "Play",
       routeName: "choose",
     },
   ],
@@ -65,7 +65,7 @@ export const store = reactive({
     title: `Ricorda che l'importante è sempre divertirsi!`,
     content: `Adesso vai e divertiti avventuriero!`,
     subtitle: "",
-    image: "https://i.gifer.com/WMj.gif",
+    image: "https://i.gifer.com/4M4z.gif",
     inverted: false,
     routerLink: {
       href: "choose",
@@ -81,16 +81,16 @@ export const store = reactive({
       profile_img: "/img/team/",
     },
     {
-      name: "Lucà Giuseppe ",
+      name: "Lucà Giuseppe",
       role: "Full stack developper",
       description: "mettetevela voi",
       profile_img: "/img/team/",
     },
     {
       name: "Rossi Aniello",
-      role: "Full stack developper",
-      description: "mettetevela voi",
-      profile_img: "/img/team/",
+      role: "Junior Full stack developper",
+      description: "Sono un ragazzo a cui piace programmare, risolvendo problemi, ma soprattutto creandone di nuovi",
+      profile_img: "/img/team/n-rossi.jpg",
     },
     {
       name: "Ceravolo Daniele",
@@ -116,5 +116,10 @@ export const store = reactive({
     player2: null
   },
   selectedWeapon: [],
-
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 });
