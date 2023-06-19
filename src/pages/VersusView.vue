@@ -185,8 +185,8 @@
 
   <div v-else>
     <div class="container mt-5 w-100 d-flex flex-column justify-content-between align-items-center text-center">
-      <h1 class="mb-3">Oops, c'è qualche bug qui</h1>
-      <h3 class="mb-5">Non hai scelto i personaggi, torna alla selezione</h3>
+      <div class="h1 mb-3">Oops, c'è qualche bug qui</div>
+      <div class="mb-5 h3">Non hai scelto i personaggi, torna alla selezione</div>
       <router-link :to="{ name: 'choose' }" class="bm-btn">
         <button class="bm-btn">Scegli</button>
       </router-link>
