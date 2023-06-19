@@ -37,31 +37,31 @@
 
         <!-- Character Stats and Play Button -->
         <div class="d-flex flex-column align-items-center my-5">
-          <div class="d-flex w-50 justify-content-between">
-            <div class="px-2 d-flex align-items-center">
+          <div class="d-flex justify-content-center row w-75">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
               <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
               <span class="fw-bold fs-5">{{ store.playGame.player1.strength }} STR</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
               <img src="/img/stats/shield.png" alt="defence" class="stats-img" />
               <span class="fw-bold fs-5">{{ store.playGame.player1.defence }} DEF</span>
             </div>
           </div>
 
-          <div class="d-flex w-50 justify-content-between">
-            <div class="px-2 d-flex align-items-center">
+          <div class="d-flex w-50 justify-content-between row w-75">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
               <img src="/img/stats/speed.png" alt="attack" class="stats-img" />
               <span class="fw-bold fs-5">{{ store.playGame.player1.speed }} SPD</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
               <img src="/img/stats/brain.png" alt="defence" class="stats-img" />
               <span class="fw-bold fs-5">{{ store.playGame.player1.intelligence }} INT</span>
             </div>
           </div>
 
-          <div class="px-2 d-flex align-items-center">
+          <div class="px-2 d-flex align-items-center col-12 justify-content-center">
             <img src="/img/stats/life.png" alt="defence" class="stats-img" />
             <span class="fw-bold fs-5">{{ firstPlayer.currentHp }} LIFE</span>
           </div>
@@ -142,30 +142,31 @@
 
         <!-- Character Stats and Play Button -->
         <div class="d-flex flex-column align-items-center my-5">
-          <div class="d-flex w-50 justify-content-between">
-            <div class="px-2 d-flex align-items-center">
+          <div class="d-flex w-50 justify-content-between row w-75">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
               <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
               <span class="fw-bold fs-5">{{ store.playGame.player2.strength }} STR</span>
             </div>
-            <div class="px-2 d-flex align-items-center">
+
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
               <img src="/img/stats/shield.png" alt="defence" class="stats-img" />
               <span class="fw-bold fs-5">{{ store.playGame.player2.defence }} DEF</span>
             </div>
           </div>
 
-          <div class="d-flex w-50 justify-content-between">
-            <div class="px-2 d-flex align-items-center">
+          <div class="d-flex w-50 justify-content-between row w-75">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
               <img src="/img/stats/speed.png" alt="attack" class="stats-img" />
               <span class="fw-bold fs-5">{{ store.playGame.player2.speed }} SPD</span>
             </div>
 
-            <div class="px-2 d-flex align-items-center">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
               <img src="/img/stats/brain.png" alt="defence" class="stats-img" />
               <span class="fw-bold fs-5">{{ store.playGame.player2.intelligence }} INT</span>
             </div>
           </div>
 
-          <div class="px-2 d-flex align-items-center">
+          <div class="px-2 d-flex align-items-center col-12 justify-content-center">
             <img src="/img/stats/life.png" alt="defence" class="stats-img" />
             <span class="fw-bold fs-5">{{ secondPlayer.currentHp }} LIFE</span>
           </div>
