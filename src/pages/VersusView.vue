@@ -342,7 +342,26 @@ h4 {
 }
 
 button[disabled] {
-  color: red;
+  background-color: #c0c0c080;
+  color: $dark;
+  cursor: default;
+  box-shadow:
+    // up and right color shadow
+    inset 0px 0px 0px 0px #c0c0c080,
+    // bottom color shadow
+    inset 0px 0px 0px 0px #c0c0c080,
+    // left color shadow
+    inset 0px 0px 0px 0px #c0c0c080;
+
+  &:hover {
+    box-shadow:
+      // up and right color shadow
+      inset 0px 0px 0px 0px #c0c0c080,
+      // bottom color shadow
+      inset 0px 0px 0px 0px #c0c0c080,
+      // left color shadow
+      inset 0px 0px 0px 0px #c0c0c080;
+  }
 }
 
 .player-img-box {
