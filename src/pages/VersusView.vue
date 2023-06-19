@@ -1,8 +1,8 @@
 <template>
   <div v-if="store.playGame.player1" class="container mt-5">
-    <div class="row my-5">
+    <div class="versus-row row my-5 align-content-center flex-column flex-md-row">
       <!-- First character -->
-      <div class="col-4">
+      <div class="col-12 col-md-4 d-flex align-items-sm-center flex-column">
         <h3 class="pixel-text text-center">
           {{ store.playGame.player1.name }}
         </h3>
@@ -77,7 +77,7 @@
       </div>
 
       <!-- VERSUS IMAGE and logs-->
-      <div class="col-4 d-flex align-items-center flex-column position-relative">
+      <div class="col-12 col-lg-4 d-flex align-items-center flex-column position-relative">
         <!-- Fight logs -->
         <div class="d-flex w-100">
           <div class="w-100">
@@ -107,7 +107,7 @@
       </div>
 
       <!-- Second character -->
-      <div class="col-4">
+      <div class="col-12 col-lg-4 d-flex align-items-center flex-column">
         <h3 class="pixel-text text-center">
           {{ store.playGame.player2.name }}
         </h3>
@@ -333,5 +333,15 @@ h4 {
 
 button[disabled] {
   color: red;
+}
+
+@media screen and (max-width:991px) and (min-width:768px) {
+  .versus-row {
+    justify-content: center;
+
+    .col-12 {
+      width: 100%;
+    }
+  }
 }
 </style>
