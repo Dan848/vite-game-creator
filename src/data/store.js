@@ -98,13 +98,13 @@ export const store = reactive({
     {
       name: "Libralato Michele ",
       role: "Junior RE web Developer",
-      description: " Junior sono nell'anima. So de LATINA.",
+      description: " Junior solo nell'anima. So de LATINA.",
       profile_img: "/img/team/m-librato.png",
     },
     {
       name: "Lumia Giorgio ",
       role: "Full Stack Celiaco",
-      description: "Mi defisco un uomo pieno di inventiva e di problemi.",
+      description: "Mi definisco un uomo pieno di inventiva e di problemi.",
       profile_img: "/img/team/g-lumia.jpg",
     },
   ],
