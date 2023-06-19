@@ -81,16 +81,16 @@ export const store = reactive({
       profile_img: "/img/team/",
     },
     {
-      name: "Lucà Giuseppe ",
+      name: "Lucà Giuseppe",
       role: "Full stack developper",
       description: "mettetevela voi",
       profile_img: "/img/team/",
     },
     {
       name: "Rossi Aniello",
-      role: "Full stack developper",
-      description: "mettetevela voi",
-      profile_img: "/img/team/",
+      role: "Junior Full stack developper",
+      description: "Sono un ragazzo a cui piace programmare, risolvendo problemi, ma soprattutto creandone di nuovi",
+      profile_img: "/img/team/n-rossi.jpg",
     },
     {
       name: "Ceravolo Daniele",
