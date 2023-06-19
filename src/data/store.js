@@ -91,15 +91,15 @@ export const store = reactive({
     },
     {
       name: "Ceravolo Daniele",
-      role: "IL PAZZO CHE HA DECISO DI FARLO FUNZIONANTE IL GIOCO",
-      description: "mettetevela voi",
-      profile_img: "/img/team/",
+      role: "Project manager",
+      description: "IL PAZZO CHE HA DECISO DI FARLO FUNZIONANTE IL GIOCO",
+      profile_img: "/img/team/d-ceravolo.jpeg",
     },
     {
       name: "Libralato Michele ",
       role: "IL RE",
       description: "mettetevela voi",
-      profile_img: "/img/team/",
+      profile_img: "/img/team/m-librato.png",
     },
     {
       name: "Lumia Giorgio ",
