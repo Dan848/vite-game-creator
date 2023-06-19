@@ -23,6 +23,10 @@ $fa-font-path: "./webfonts" !default;
     font-family: 'Silkscreen', cursive;
 }
 
+main{
+    overflow: hidden;
+}
+
 // Custom Button
 .bm-btn {
     font-family: 'Silkscreen', cursive;

@@ -193,9 +193,12 @@
     </div>
 
   </div>
+
+  <GameWinner v-if="gameOver" :message="'player1 ha vinto'"/>
 </template>
 <script>
 import { store } from "../data/store";
+import GameWinner from "../components/GameWinner.vue";
 export default {
   name: "VersusView",
   data() {
@@ -204,8 +207,11 @@ export default {
       firstPlayer: { ...store.playGame.player1 },
       secondPlayer: { ...store.playGame.player2 },
       gameOver: false,
-      turnPlayer: null
+      turnPlayer: null,
     };
+  },
+  components: {
+    GameWinner
   },
   methods: {
     getSelectedItem(items, player) {
