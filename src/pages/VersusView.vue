@@ -6,12 +6,12 @@
         <h3 class="pixel-text text-center">
           {{ store.playGame.player1.name }}
         </h3>
-        <div style="height: 400px;">
+        <div class="player-img-box">
           <img :src="store.imgStartUrl +
             (store.playGame.player1.image
               ? store.playGame.player1.image
               : store.playGame.player1.type.image)
-            " alt="characterOne" class="w-100 h-100" />
+            " alt="characterOne" class="img-fluid" />
         </div>
 
         <!-- Character Content -->
@@ -38,7 +38,7 @@
         <!-- Character Stats and Play Button -->
         <div class="d-flex flex-column align-items-center my-5">
           <div class="d-flex justify-content-center row w-75">
-            <div class="px-2 d-flex align-items-center justify-content-center col-12 col-lg-6">
+            <div class="px-2 d-flex align-items-center justify-content-center col-12   col-lg-6">
               <img src="/img/stats/strength.png" alt="attack" class="stats-img" />
               <span class="fw-bold fs-5">{{ store.playGame.player1.strength }} STR</span>
             </div>
@@ -111,12 +111,12 @@
         <h3 class="pixel-text text-center">
           {{ store.playGame.player2.name }}
         </h3>
-        <div style="height: 400px;">
+        <div class="player-img-box">
           <img :src="store.imgStartUrl +
             (store.playGame.player2.image
               ? store.playGame.player2.image
               : store.playGame.player2.type.image)
-            " alt="characterOne" class="w-100 h-100" />
+            " alt="characterOne" class="img-fluid" />
         </div>
 
         <!-- Character Content -->
@@ -335,12 +335,37 @@ button[disabled] {
   color: red;
 }
 
+.player-img-box {
+  height: 400px;
+}
+
 @media screen and (max-width:991px) and (min-width:768px) {
   .versus-row {
     justify-content: center;
 
     .col-12 {
       width: 100%;
+    }
+  }
+
+  .player-img-box {
+    height: 200px;
+
+    img {
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+
+  .player-img-box {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+
+    img {
+      height: 100%;
     }
   }
 }
